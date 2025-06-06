@@ -1,0 +1,64 @@
+[0.439s] Invoking command in '/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --build /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_description -- -j8 -l8
+[0.467s] Invoked command in '/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --build /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_description -- -j8 -l8
+[0.475s] Invoking command in '/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --install /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_description
+[0.481s] -- Install configuration: ""
+[0.481s] -- Execute custom install script
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/Old/older/rover_body.stl
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/Old/rover_body.stl
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/Old/wave_rover_model.stl
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/back_left_wheel.stl
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/back_right_wheel.stl
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/d435.dae
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/d435.stl
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/front_left_wheel.stl
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/front_right_wheel.stl
+[0.482s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/leftside_wheel.stl
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/realsense_bracket.stl
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/realsense_camera.stl
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/rightside_wheel.stl
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/rover_body.stl
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/roverbody.stl
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/wave_rover_model.stl
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/old/wave_rover.sdf
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/out.urdf
+[0.483s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover.gazebo
+[0.484s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover.urdf
+[0.484s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover.urdf.xacro
+[0.484s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover.config
+[0.484s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover.sdf
+[0.484s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover.urdf
+[0.484s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover.urdf.xacro
+[0.484s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/launch/display.launch.py
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/launch/display_box.launch.py
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/meshes/cone.stl
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/model.config
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/model.sdf
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/meshes/cone.stl
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/model.config
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/model.sdf
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/meshes/cone.stl
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/model.config
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/model.sdf
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/meshes/cone.stl
+[0.485s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/model.config
+[0.486s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/model.sdf
+[0.486s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/empty.world
+[0.486s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/oasis.world
+[0.486s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/small_circle.world
+[0.486s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/small_track_bean.world
+[0.486s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/ament_index/resource_index/package_run_dependencies/wave_rover_description
+[0.487s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/ament_index/resource_index/parent_prefix_path/wave_rover_description
+[0.487s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/environment/ament_prefix_path.sh
+[0.487s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/environment/ament_prefix_path.dsv
+[0.488s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/environment/path.sh
+[0.488s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/environment/path.dsv
+[0.488s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/local_setup.bash
+[0.488s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/local_setup.sh
+[0.488s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/local_setup.zsh
+[0.488s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/local_setup.dsv
+[0.488s] -- Symlinking: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/package.dsv
+[0.494s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/ament_index/resource_index/packages/wave_rover_description
+[0.494s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/cmake/wave_rover_descriptionConfig.cmake
+[0.495s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/cmake/wave_rover_descriptionConfig-version.cmake
+[0.495s] -- Up-to-date symlink: /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/package.xml
+[0.514s] Invoked command in '/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --install /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_description
