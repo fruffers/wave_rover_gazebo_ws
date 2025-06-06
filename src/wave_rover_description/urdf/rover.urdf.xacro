@@ -33,10 +33,10 @@
 
  <!-- Material Definitions -->
  <material name="black">
-   <color rgba="0.0 0.0 0.0 1.0"/>
+   <color rgba="0.2 0.2 0.2 1.0"/>
  </material>
  <material name="grey">
-   <color rgba="0.1 0.1 0.1 1.0"/>
+   <color rgba="0.15 0.15 0.15 1.0"/>
  </material>
  <material name="silver">
    <color rgba="0.75 0.75 0.75 1.0"/>
@@ -115,7 +115,7 @@
      <geometry>
        <mesh filename="package://wave_rover_description/meshes/d435.stl" scale="0.01 0.01 0.01"/>
      </geometry>
-     <material name="blue"/>
+     <material name="silver"/>
    </visual>
    <inertial>
      <mass value="0.2"/>

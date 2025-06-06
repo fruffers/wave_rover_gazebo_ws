@@ -1,0 +1,16 @@
+[0.764s] Invoking command in '/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/test_box_launch': PYTHONPATH=/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/test_box_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/test_box_launch/build --no-deps symlink_data
+[0.964s] running develop
+[1.112s] running egg_info
+[1.112s] writing test_box_launch.egg-info/PKG-INFO
+[1.112s] writing dependency_links to test_box_launch.egg-info/dependency_links.txt
+[1.112s] writing entry points to test_box_launch.egg-info/entry_points.txt
+[1.112s] writing requirements to test_box_launch.egg-info/requires.txt
+[1.112s] writing top-level names to test_box_launch.egg-info/top_level.txt
+[1.115s] reading manifest file 'test_box_launch.egg-info/SOURCES.txt'
+[1.115s] writing manifest file 'test_box_launch.egg-info/SOURCES.txt'
+[1.116s] running build_ext
+[1.116s] Creating /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages/test-box-launch.egg-link (link to .)
+[1.117s] 
+[1.117s] Installed /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/test_box_launch
+[1.118s] running symlink_data
+[1.141s] Invoked command in '/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/test_box_launch' returned '0': PYTHONPATH=/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/test_box_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/test_box_launch/build --no-deps symlink_data
