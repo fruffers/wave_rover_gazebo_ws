@@ -38,8 +38,8 @@
  <material name="grey">
    <color rgba="0.1 0.1 0.1 1.0"/>
  </material>
- <material name="blue">
-   <color rgba="0.1 0.1 1.0 1.0"/>
+ <material name="silver">
+   <color rgba="0.75 0.75 0.75 1.0"/>
  </material>
 
  <link name="dummy"/>
@@ -96,6 +96,7 @@
      <geometry>
        <mesh filename="package://wave_rover_description/meshes/realsense_bracket.stl" scale="0.001 0.001 0.001"/>
      </geometry>
+     <material name="grey"/>
    </visual>
    <inertial>
      <mass value="0.05"/>
@@ -177,7 +178,7 @@
  <joint name="front_left_wheel_joint" type="revolute">
    <parent link="base_link"/>
    <child link="front_left_wheel"/>
-   <origin xyz="0.06 0.050 0" rpy="0 0 0"/>
+   <origin xyz="0.061 0.050 0" rpy="0 0 0"/>
    <axis xyz="0 1 0">
      <dynamics damping="1.0" friction="1.0"/>
    </axis>
@@ -205,7 +206,7 @@
  <joint name="front_right_wheel_joint" type="revolute">
    <parent link="base_link"/>
    <child link="front_right_wheel"/>
-   <origin xyz="0.06 -0.050 0" rpy="0 0 0"/>
+   <origin xyz="0.061 -0.050 0" rpy="0 0 0"/>
    <axis xyz="0 1 0">
      <dynamics damping="1.0" friction="1.0"/>
    </axis>
@@ -233,7 +234,7 @@
  <joint name="back_left_wheel_joint" type="revolute">
    <parent link="base_link"/>
    <child link="back_left_wheel"/>
-   <origin xyz="-0.06 0.050 0" rpy="0 0 0"/>
+   <origin xyz="-0.061 0.050 0" rpy="0 0 0"/>
    <axis xyz="0 1 0">
      <dynamics damping="1.0" friction="1.0"/>
    </axis>
@@ -261,7 +262,7 @@
  <joint name="back_right_wheel_joint" type="revolute">
    <parent link="base_link"/>
    <child link="back_right_wheel"/>
-   <origin xyz="-0.06 -0.050 0" rpy="0 0 0"/>
+   <origin xyz="-0.061 -0.050 0" rpy="0 0 0"/>
    <axis xyz="0 1 0">
      <dynamics damping="1.0" friction="1.0"/>
    </axis>
