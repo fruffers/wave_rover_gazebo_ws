@@ -1,0 +1,16 @@
+[0.759s] Invoking command in '/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/launch_sim': PYTHONPATH=/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/launch_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/launch_sim/build --no-deps symlink_data
+[0.949s] running develop
+[1.090s] running egg_info
+[1.090s] writing launch_sim.egg-info/PKG-INFO
+[1.090s] writing dependency_links to launch_sim.egg-info/dependency_links.txt
+[1.090s] writing entry points to launch_sim.egg-info/entry_points.txt
+[1.090s] writing requirements to launch_sim.egg-info/requires.txt
+[1.090s] writing top-level names to launch_sim.egg-info/top_level.txt
+[1.092s] reading manifest file 'launch_sim.egg-info/SOURCES.txt'
+[1.093s] writing manifest file 'launch_sim.egg-info/SOURCES.txt'
+[1.093s] running build_ext
+[1.094s] Creating /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch-sim.egg-link (link to .)
+[1.094s] 
+[1.094s] Installed /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/launch_sim
+[1.094s] running symlink_data
+[1.122s] Invoked command in '/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/launch_sim' returned '0': PYTHONPATH=/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/launch_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/louise/Development/rover_project/wave_rover_gazebo_ws/build/launch_sim/build --no-deps symlink_data

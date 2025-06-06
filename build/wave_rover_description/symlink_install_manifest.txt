@@ -7,9 +7,12 @@
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/d435.stl
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/front_left_wheel.stl
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/front_right_wheel.stl
+/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/leftside_wheel.stl
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/realsense_bracket.stl
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/realsense_camera.stl
+/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/rightside_wheel.stl
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/rover_body.stl
+/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/roverbody.stl
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/wave_rover_model.stl
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/old/wave_rover.sdf
 /home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/out.urdf

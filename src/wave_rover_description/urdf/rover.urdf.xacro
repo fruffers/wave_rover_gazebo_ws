@@ -48,15 +48,16 @@
  <!-- Base -->
   <link name="base_link">
     <visual>
-    <origin rpy="0 0 0" xyz="0 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 0.02" />
       <geometry>
-        <mesh filename="package://wave_rover_description/meshes/rover_body.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://wave_rover_description/meshes/roverbody.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey">
         <color rgba="0.1 0.1 0.1 1.0"/>
       </material>
     </visual>
     <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <box size="${base_link_x_dim} ${base_link_y_dim} ${base_link_z_dim}"/>
       </geometry>
@@ -162,7 +163,7 @@
     <link name="front_left_wheel">
       <xacro:inertia_wheel/>
       <collision name="front_left_collision">
-      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0" xyz="0.2 0 0"/>
         <geometry>
           <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
         </geometry>
@@ -170,7 +171,7 @@
         <visual name="front_left_visual">
         <origin rpy="1.570795 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://wave_rover_description/meshes/front_left_wheel.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://wave_rover_description/meshes/leftside_wheel.stl" scale="0.001 0.001 0.001" />
         </geometry>
         </visual>
     </link>
@@ -186,7 +187,7 @@
         <visual name="front_right_visual">
         <origin rpy="1.570795 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://wave_rover_description/meshes/front_right_wheel.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://wave_rover_description/meshes/rightside_wheel.stl" scale="0.001 0.001 0.001" />
         </geometry>
         </visual>
     </link>
@@ -202,7 +203,7 @@
         <visual name="back_left_visual">
         <origin rpy="1.570795 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://wave_rover_description/meshes/back_left_wheel.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://wave_rover_description/meshes/leftside_wheel.stl" scale="0.001 0.001 0.001" />
         </geometry>
         </visual>
     </link>
@@ -218,7 +219,7 @@
         <visual name="back_right_visual">
         <origin rpy="1.570795 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://wave_rover_description/meshes/back_right_wheel.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://wave_rover_description/meshes/rightside_wheel.stl" scale="0.001 0.001 0.001" />
         </geometry>
         </visual>
     </link>
