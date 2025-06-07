@@ -179,7 +179,7 @@
 
  <joint name="front_left_wheel_joint" type="revolute">
    <parent link="base_link"/>
-   <child link="back_right_wheel"/>
+   <child link="front_left_wheel"/>
    <origin xyz="-0.061 -0.050 ${z_offset}" rpy="0 0 0"/>
    <axis xyz="1 0 0">
      <dynamics damping="1.0" friction="1.0"/>
@@ -263,7 +263,7 @@
  
   <joint name="back_right_wheel_joint" type="revolute">
    <parent link="base_link"/>
-   <child link="front_left_wheel"/>
+   <child link="back_right_wheel"/>
    <origin xyz="0.061 0.050 ${z_offset}" rpy="0 0 0"/>
    <axis xyz="1 0 0">
      <dynamics damping="1.0" friction="1.0"/>
