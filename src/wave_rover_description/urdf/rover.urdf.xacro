@@ -158,12 +158,12 @@
    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
  </joint>
 
- <!-- Wheel Links (unchanged) -->
+ <!-- Wheel Links -->
  <!-- Front Left Wheel -->
  <link name="front_left_wheel">
    <xacro:inertia_wheel/>
    <collision>
-     <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+     <origin rpy="1.5708 0 0" xyz="0.061 0.050 ${z_offset}"/>
      <geometry>
        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
      </geometry>
@@ -179,9 +179,9 @@
 
  <joint name="front_left_wheel_joint" type="revolute">
    <parent link="base_link"/>
-   <child link="front_left_wheel"/>
-   <origin xyz="0.061 0.050 ${z_offset}" rpy="0 0 0"/>
-   <axis xyz="0 1 0">
+   <child link="back_right_wheel"/>
+   <origin xyz="-0.061 -0.050 ${z_offset}" rpy="0 0 0"/>
+   <axis xyz="1 0 0">
      <dynamics damping="1.0" friction="1.0"/>
    </axis>
    <limit lower="-1000" upper="1000" effort="10.0" velocity="10.0"/>
@@ -191,7 +191,7 @@
  <link name="front_right_wheel">
    <xacro:inertia_wheel/>
    <collision>
-     <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+     <origin rpy="1.5708 0 0" xyz="0.061 -0.050 ${z_offset}"/>
      <geometry>
        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
      </geometry>
@@ -209,7 +209,7 @@
    <parent link="base_link"/>
    <child link="front_right_wheel"/>
    <origin xyz="0.061 -0.050 ${z_offset}" rpy="0 0 0"/>
-   <axis xyz="0 1 0">
+   <axis xyz="1 0 0">
      <dynamics damping="1.0" friction="1.0"/>
    </axis>
    <limit lower="-1000" upper="1000" effort="10.0" velocity="10.0"/>
@@ -219,7 +219,7 @@
  <link name="back_left_wheel">
    <xacro:inertia_wheel/>
    <collision>
-     <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+     <origin rpy="1.5708 0 0" xyz="-0.061 0.050 ${z_offset}"/>
      <geometry>
        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
      </geometry>
@@ -237,7 +237,7 @@
    <parent link="base_link"/>
    <child link="back_left_wheel"/>
    <origin xyz="-0.061 0.050 ${z_offset}" rpy="0 0 0"/>
-   <axis xyz="0 1 0">
+   <axis xyz="1 0 0">
      <dynamics damping="1.0" friction="1.0"/>
    </axis>
    <limit lower="-1000" upper="1000" effort="10.0" velocity="10.0"/>
@@ -247,7 +247,7 @@
  <link name="back_right_wheel">
    <xacro:inertia_wheel/>
    <collision>
-     <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+     <origin rpy="1.5708 0 0" xyz="-0.061 -0.050 ${z_offset}"/>
      <geometry>
        <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
      </geometry>
@@ -260,12 +260,12 @@
      <material name="black"/>
    </visual>
  </link>
-
- <joint name="back_right_wheel_joint" type="revolute">
+ 
+  <joint name="back_right_wheel_joint" type="revolute">
    <parent link="base_link"/>
-   <child link="back_right_wheel"/>
-   <origin xyz="-0.061 -0.050 ${z_offset}" rpy="0 0 0"/>
-   <axis xyz="0 1 0">
+   <child link="front_left_wheel"/>
+   <origin xyz="0.061 0.050 ${z_offset}" rpy="0 0 0"/>
+   <axis xyz="1 0 0">
      <dynamics damping="1.0" friction="1.0"/>
    </axis>
    <limit lower="-1000" upper="1000" effort="10.0" velocity="10.0"/>
