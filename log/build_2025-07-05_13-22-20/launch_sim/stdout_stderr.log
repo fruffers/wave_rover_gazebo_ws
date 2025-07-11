@@ -1,0 +1,41 @@
+running egg_info
+creating ../../build/launch_sim/launch_sim.egg-info
+writing ../../build/launch_sim/launch_sim.egg-info/PKG-INFO
+writing dependency_links to ../../build/launch_sim/launch_sim.egg-info/dependency_links.txt
+writing entry points to ../../build/launch_sim/launch_sim.egg-info/entry_points.txt
+writing requirements to ../../build/launch_sim/launch_sim.egg-info/requires.txt
+writing top-level names to ../../build/launch_sim/launch_sim.egg-info/top_level.txt
+writing manifest file '../../build/launch_sim/launch_sim.egg-info/SOURCES.txt'
+reading manifest file '../../build/launch_sim/launch_sim.egg-info/SOURCES.txt'
+writing manifest file '../../build/launch_sim/launch_sim.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build
+creating /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build/lib
+creating /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build/lib/launch_sim
+copying launch_sim/__init__.py -> /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build/lib/launch_sim
+running install
+running install_lib
+creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch_sim
+copying /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build/lib/launch_sim/__init__.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch_sim
+byte-compiling /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch_sim/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/ament_index
+creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/ament_index/resource_index
+creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/ament_index/resource_index/packages
+copying resource/launch_sim -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/ament_index/resource_index/packages
+copying package.xml -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim
+creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/rover_fortress.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/simple_fortress.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/simulator.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/view_robot.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/sim_fortress.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/debug_robot.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/minimal_gazebo.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/rover_fortress_simple.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+copying launch/sim.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+running install_egg_info
+Copying ../../build/launch_sim/launch_sim.egg-info to /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch_sim-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/install.log'

@@ -1,1 +1,2 @@
-/home/louise/Development/rover_project/wave_rover_gazebo_ws/build/wave_rover_gazebo/ament_cmake_environment_hooks/local_setup.dsv
+source;share/wave_rover_gazebo/environment/ament_prefix_path.sh
+source;share/wave_rover_gazebo/environment/path.sh

@@ -1,0 +1,43 @@
+[0.670s] Invoking command in '/home/louise/Development/wave_rover_gazebo_ws/src/launch_sim': PYTHONPATH=/home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/launch_sim build --build-base /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build install --record /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/install.log --single-version-externally-managed install_data
+[0.837s] running egg_info
+[0.838s] creating ../../build/launch_sim/launch_sim.egg-info
+[0.838s] writing ../../build/launch_sim/launch_sim.egg-info/PKG-INFO
+[0.838s] writing dependency_links to ../../build/launch_sim/launch_sim.egg-info/dependency_links.txt
+[0.838s] writing entry points to ../../build/launch_sim/launch_sim.egg-info/entry_points.txt
+[0.838s] writing requirements to ../../build/launch_sim/launch_sim.egg-info/requires.txt
+[0.838s] writing top-level names to ../../build/launch_sim/launch_sim.egg-info/top_level.txt
+[0.838s] writing manifest file '../../build/launch_sim/launch_sim.egg-info/SOURCES.txt'
+[0.839s] reading manifest file '../../build/launch_sim/launch_sim.egg-info/SOURCES.txt'
+[0.839s] writing manifest file '../../build/launch_sim/launch_sim.egg-info/SOURCES.txt'
+[0.839s] running build
+[0.839s] running build_py
+[0.840s] creating /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build
+[0.840s] creating /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build/lib
+[0.840s] creating /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build/lib/launch_sim
+[0.840s] copying launch_sim/__init__.py -> /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build/lib/launch_sim
+[0.840s] running install
+[0.841s] running install_lib
+[0.841s] creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch_sim
+[0.841s] copying /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build/lib/launch_sim/__init__.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch_sim
+[0.841s] byte-compiling /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch_sim/__init__.py to __init__.cpython-310.pyc
+[0.841s] running install_data
+[0.841s] creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/ament_index
+[0.841s] creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/ament_index/resource_index
+[0.841s] creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/ament_index/resource_index/packages
+[0.841s] copying resource/launch_sim -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/ament_index/resource_index/packages
+[0.841s] copying package.xml -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim
+[0.841s] creating /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.841s] copying launch/rover_fortress.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.841s] copying launch/simple_fortress.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.841s] copying launch/simulator.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.842s] copying launch/view_robot.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.842s] copying launch/sim_fortress.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.842s] copying launch/debug_robot.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.842s] copying launch/minimal_gazebo.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.842s] copying launch/rover_fortress_simple.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.842s] copying launch/sim.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/share/launch_sim/launch
+[0.842s] running install_egg_info
+[0.845s] Copying ../../build/launch_sim/launch_sim.egg-info to /home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages/launch_sim-0.0.0-py3.10.egg-info
+[0.845s] running install_scripts
+[0.859s] writing list of installed files to '/home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/install.log'
+[0.900s] Invoked command in '/home/louise/Development/wave_rover_gazebo_ws/src/launch_sim' returned '0': PYTHONPATH=/home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/launch_sim build --build-base /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/build install --record /home/louise/Development/wave_rover_gazebo_ws/build/launch_sim/install.log --single-version-externally-managed install_data

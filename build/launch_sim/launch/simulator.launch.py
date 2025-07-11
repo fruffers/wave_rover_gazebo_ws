@@ -1,1 +1,0 @@
-/home/louise/Development/rover_project/wave_rover_gazebo_ws/src/launch_sim/launch/simulator.launch.py

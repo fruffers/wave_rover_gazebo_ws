@@ -2,7 +2,7 @@
 
 # since this file is sourced use either the provided AMENT_CURRENT_PREFIX
 # or fall back to the destination set at configure time
-: ${AMENT_CURRENT_PREFIX:="/home/louise/Development/rover_project/wave_rover_gazebo_ws/install/wave_rover_gazebo"}
+: ${AMENT_CURRENT_PREFIX:="/home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo"}
 if [ ! -d "$AMENT_CURRENT_PREFIX" ]; then
   if [ -z "$COLCON_CURRENT_PREFIX" ]; then
     echo "The compile time prefix path '$AMENT_CURRENT_PREFIX' doesn't " \
