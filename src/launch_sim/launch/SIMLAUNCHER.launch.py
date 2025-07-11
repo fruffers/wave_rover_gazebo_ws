@@ -7,7 +7,7 @@ from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, Time
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
-from launch_ros.substitutions import FindPackageShare, LaunchConfiguration
+from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
@@ -23,6 +23,12 @@ def generate_launch_description():
         'default_world_file',
         default_value=default_world,
         description='World file to load in Gazebo as default'
+    )
+    
+    world_arg = DeclareLaunchArgument(
+        'world',
+        default_value=default_world,
+        description='World file to load in Gazebo'
     )
     
     # Define launch arguments
@@ -100,7 +106,7 @@ def generate_launch_description():
         executable='create',
         name='spawn_wave_rover',
         arguments=[
-            '-name', LaunchConfiguration('wave_rover'),
+            '-name', LaunchConfiguration('robot_name'),
             '-file', sdf_file_path,
             '-x', LaunchConfiguration('robot_x'),
             '-y', LaunchConfiguration('robot_y'),
@@ -169,6 +175,8 @@ def generate_launch_description():
     return LaunchDescription([
         # Launch arguments
         default_world_arg,
+        world_arg,
+        world_file_arg,
         robot_name_arg,
         robot_x_arg,
         robot_y_arg,
