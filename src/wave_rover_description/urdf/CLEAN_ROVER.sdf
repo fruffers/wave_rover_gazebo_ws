@@ -5,15 +5,16 @@
     <link name="base_link">
       <pose>0 0 0 0 0 0</pose>
       <inertial>
-        <mass>0.266</mass>
+        <mass>5.0</mass>
         <inertia>
-        <ixx>0.000264</ixx>
-        <ixy>0.0</ixy>
-        <ixz>0.0</ixz>
-        <iyy>0.01</iyy>
-        <iyz>0.0</iyz>
-        <izz>0.000264</izz>
-      </inertia>
+          <ixx>0.02</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.02</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
       <visual name="base_visual">
         <pose>0 0 0.06 0 0 0</pose>
         <geometry>
@@ -34,6 +35,22 @@
             <size>0.1828 0.0753 0.0542</size>
           </box>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
       </collision>
     </link>
 
@@ -43,13 +60,14 @@
       <inertial>
         <mass>0.1</mass>
         <inertia>
-        <ixx>1e-5</ixx>
-        <ixy>0.0</ixy>
-        <ixz>0.0</ixz>
-        <iyy>1e-5</iyy>
-        <iyz>0.0</iyz>
-        <izz>1e-5</izz>
-      </inertia>
+          <ixx>1e-5</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1e-5</iyy>
+          <iyz>0.0</iyz>
+          <izz>1e-5</izz>
+        </inertia>
+      </inertial>
       <visual name="bracket_stand_visual">
         <geometry>
           <box>
@@ -61,6 +79,13 @@
           <specular>0.1 0.1 0.1 1.0</specular>
         </material>
       </visual>
+      <collision name="bracket_stand_collision">
+        <geometry>
+          <box>
+            <size>0.045 0.11 0.04</size>
+          </box>
+        </geometry>
+      </collision>
     </link>
 
     <!-- Bracket Stand Joint -->
@@ -75,13 +100,15 @@
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.05</mass>
-        <ixx>1e-6</ixx>
-        <ixy>0.0</ixy>
-        <ixz>0.0</ixz>
-        <iyy>1e-6</iyy>
-        <iyz>0.0</iyz>
-        <izz>1e-6</izz>
-      </inertia>
+        <inertia>
+          <ixx>1e-6</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1e-6</iyy>
+          <iyz>0.0</iyz>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
       <visual name="camera_bracket_visual">
         <geometry>
           <mesh>
@@ -94,6 +121,13 @@
           <specular>0.1 0.1 0.1 1.0</specular>
         </material>
       </visual>
+      <collision name="camera_bracket_collision">
+        <geometry>
+          <box>
+            <size>0.02 0.08 0.02</size>
+          </box>
+        </geometry>
+      </collision>
     </link>
 
     <!-- Camera Bracket Joint -->
@@ -115,19 +149,48 @@
           <iyz>0</iyz>
           <izz>8.931e-05</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
-      <collision name="collision">
+      <collision name="camera_link_collision">
+        <geometry>
+          <box>
+            <size>0.09 0.025 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Camera Mount Joint -->
+    <joint name="camera_mount" type="fixed">
+      <parent>camera_bracket_link</parent>
+      <child>camera_link</child>
+      <pose>0.0 -0.03 0.02 0.349 0 0</pose>
+    </joint>
+
+    <!-- Camera Sensor Link -->
+    <link name="camera_sensor_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.0615752</mass>
+        <inertia>
+          <ixx>9.108e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.51e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8.931e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="camera_sensor_collision">
+        <geometry>
+          <box>
+            <size>0.09 0.025 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="camera_sensor_visual">
         <geometry>
           <mesh>
             <uri>package://wave_rover_description/models/intel_realsense_d435/meshes/realsense.dae</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name= "visual">
-        <geometry>
-          <mesh>
-            <uri>package://wave_rover_description/meshes/d435.dae</uri>
             <submesh>
               <name>RealSense</name>
               <center>false</center>
@@ -135,8 +198,8 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0</specular>
+          <diffuse>1.0 1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0 1.0</specular>
           <pbr>
             <metal>
               <albedo_map>package://wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Albedo.png</albedo_map>
@@ -145,7 +208,7 @@
               <roughness_map>package://wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Roughness.png</roughness_map>
             </metal>
           </pbr>
-          <!-- fallback to script if no PBR support-->
+           <!-- fallback to script if no PBR support-->
           <script>
             <uri>package://wave_rover_description/models/intel_realsense_d435/materials/scripts/</uri>
             <uri>package://wave_rover_description/models/intel_realsense_d435/materials/textures/</uri>
@@ -202,117 +265,6 @@
       </sensor>
     </link>
 
-    <!-- Camera Mount Joint -->
-    <joint name="camera_mount" type="fixed">
-      <parent>camera_bracket_link</parent>
-      <child>camera_link</child>
-      <pose>0.0 -0.03 0.02 0.349 0 0</pose>
-    </joint>
-
-    <!-- Camera Sensor Link -->
-    <link name="camera_sensor_link">
-      <pose>0 0 0 0 0 0</pose>
-      <inertial>
-        <mass>0.0615752</mass>
-        <ixx>9.108e-05</ixx>
-        <ixy>0</ixy>
-        <ixz>0</ixz>
-        <iyy>2.51e-06</iyy>
-        <iyz>0</iyz>
-        <izz>8.931e-05</izz>
-      </inertia>
-      <collision name="camera_sensor_collision">
-        <geometry>
-          <mesh>
-            <uri>package://wave_rover_description/meshes/d435.dae</uri>
-          </mesh>
-        </geometry>
-      </collision>
-      <visual name="camera_sensor_visual">
-        <geometry>
-          <mesh>
-            <uri>package://wave_rover_description/meshes/d435.dae</uri>
-            <submesh>
-              <name>RealSense</name>
-              <center>false</center>
-            </submesh>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>1.0 1.0 1.0 1.0</diffuse>
-          <specular>1.0 1.0 1.0 1.0</specular>
-          <pbr>
-            <metal>
-              <albedo_map>package://wave_rover_description/materials/textures/RealSense_Albedo.png</albedo_map>
-              <normal_map>package://wave_rover_description/materials/textures/RealSense_Normal.png</normal_map>
-              <metalness_map>package://wave_rover_description/materials/textures/RealSense_Metalness.png</metalness_map>
-              <roughness_map>package://wave_rover_description/materials/textures/RealSense_Roughness.png</roughness_map>
-            </metal>
-          </pbr>
-        </material>
-      </visual>
-
-      <!-- RealSense D435 Camera Sensor -->
-      <sensor name="realsense_d435" type="rgbd_camera">
-        <update_rate>30</update_rate>
-        <camera name="camera">
-          <horizontal_fov>1.0472</horizontal_fov>
-          <lens>
-            <intrinsics>
-              <fx>554.25469</fx>
-              <fy>554.25469</fy>
-              <cx>320.5</cx>
-              <cy>240.5</cy>
-              <s>0</s>
-            </intrinsics>
-          </lens>
-          <distortion>
-            <k1>0.0</k1>
-            <k2>0.0</k2>
-            <k3>0.0</k3>
-            <p1>0.0</p1>
-            <p2>0.0</p2>
-            <center>0.5 0.5</center>
-          </distortion>
-          <image>
-            <width>640</width>
-            <height>480</height>
-            <format>R8G8B8</format>
-          </image>
-          <clip>
-            <near>0.01</near>
-            <far>300</far>
-          </clip>
-          <depth_camera>
-            <clip>
-              <near>0.1</near>
-              <far>10</far>
-            </clip>
-          </depth_camera>
-          <noise>
-            <type>gaussian</type>
-            <mean>0</mean>
-            <stddev>0.007</stddev>
-          </noise>
-        </camera>
-        <plugin filename="libgazebo_ros_camera.so" name="camera_driver">
-          <ros>
-            <namespace>camera</namespace>
-            <remapping>image_raw:=image_raw</remapping>
-            <remapping>camera_info:=camera_info</remapping>
-            <remapping>depth/image_raw:=depth/image_raw</remapping>
-            <remapping>depth/camera_info:=depth/camera_info</remapping>
-            <remapping>points:=points</remapping>
-          </ros>
-          <camera_name>camera</camera_name>
-          <frame_name>camera_link_optical</frame_name>
-          <hack_baseline>0.07</hack_baseline>
-          <min_depth>0.001</min_depth>
-          <max_depth>300.0</max_depth>
-        </plugin>
-      </sensor>
-    </link>
-
     <!-- Camera Sensor Joint -->
     <joint name="camera_sensor_joint" type="fixed">
       <parent>camera_link</parent>
@@ -325,13 +277,15 @@
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.001</mass>
-        <ixx>1e-8</ixx>
-        <ixy>0.0</ixy>
-        <ixz>0.0</ixz>
-        <iyy>1e-8</iyy>
-        <iyz>0.0</iyz>
-        <izz>1e-8</izz>
-      </inertia>
+        <inertia>
+          <ixx>1e-8</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1e-8</iyy>
+          <iyz>0.0</iyz>
+          <izz>1e-8</izz>
+        </inertia>
+      </inertial>
     </link>
 
     <!-- Camera Optical Joint -->
@@ -346,13 +300,15 @@
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.451</mass>
-        <ixx>0.000395</ixx>
-        <ixy>0.0</ixy>
-        <ixz>0.0</ixz>
-        <iyy>0.000395</iyy>
-        <iyz>0.0</iyz>
-        <izz>0.000361</izz>
-      </inertia>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000395</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000361</izz>
+        </inertia>
+      </inertial>
       <collision name="front_left_wheel_collision">
         <pose>0 0 0 1.5708 0 0</pose>
         <geometry>
@@ -361,6 +317,22 @@
             <radius>0.04</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="front_left_wheel_visual">
         <pose>0 0 0 1.570795 0 0</pose>
@@ -402,12 +374,14 @@
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.451</mass>
-        <ixx>0.000395</ixx>
-        <ixy>0.0</ixy>
-        <ixz>0.0</ixz>
-        <iyy>0.000395</iyy>
-        <iyz>0.0</iyz>
-        <izz>0.000361</izz>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000395</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000361</izz>
+        </inertia>
       </inertial>
       <collision name="front_right_wheel_collision">
         <pose>0 0 0 1.5708 0 0</pose>
@@ -417,6 +391,22 @@
             <radius>0.04</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="front_right_wheel_visual">
         <pose>0 0 0 1.570795 0 0</pose>
@@ -458,13 +448,15 @@
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.451</mass>
-        <ixx>0.000395</ixx>
-        <ixy>0.0</ixy>
-        <ixz>0.0</ixz>
-        <iyy>0.000395</iyy>
-        <iyz>0.0</iyz>
-        <izz>0.000361</izz>
-      </inertia>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000395</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000361</izz>
+        </inertia>
+      </inertial>
       <collision name="back_left_wheel_collision">
         <pose>0 0 0 1.5708 0 0</pose>
         <geometry>
@@ -473,6 +465,22 @@
             <radius>0.04</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="back_left_wheel_visual">
         <pose>0 0 0 1.570795 0 0</pose>
@@ -514,13 +522,15 @@
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.451</mass>
-        <ixx>0.000395</ixx>
-        <ixy>0.0</ixy>
-        <ixz>0.0</ixz>
-        <iyy>0.000395</iyy>
-        <iyz>0.0</iyz>
-        <izz>0.000361</izz>
-      </inertia>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000395</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000361</izz>
+        </inertia>
+      </inertial>
         
       <collision name="back_right_wheel_collision">
         <pose>0 0 0 1.5708 0 0</pose>
@@ -530,6 +540,22 @@
             <radius>0.04</radius>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
       </collision>
       <visual name="back_right_wheel_visual">
         <pose>0 0 0 1.570795 0 0</pose>

@@ -15,7 +15,7 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     pkg_wave_rover_description = get_package_share_directory('wave_rover_description')
 
-    default_world = os.path.join(pkg_wave_rover_description, 'worlds', 'oasis_fortress.sdf')
+    default_world = os.path.join(pkg_wave_rover_description, 'worlds', 'fortress_test.sdf')
 
     world = LaunchConfiguration('world')
 
@@ -34,7 +34,7 @@ def generate_launch_description():
     # Define launch arguments
     world_file_arg = DeclareLaunchArgument(
         'world_file',
-        default_value='empty.world',
+        default_value='test_world.sdf',
         description='World file to load in Gazebo'
     )
     
@@ -58,7 +58,7 @@ def generate_launch_description():
     
     robot_z_arg = DeclareLaunchArgument(
         'robot_z',
-        default_value='0.1',
+        default_value='0.5',
         description='Z position of the robot'
     )
     
@@ -71,16 +71,8 @@ def generate_launch_description():
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')
         ]),
         launch_arguments={
-            'gz_args': ['-r -v4', world],
-            'on_exit_shutdown': 'true',
-            'world': PathJoinSubstitution([
-                FindPackageShare('wave_rover_description'),
-                'worlds',
-                LaunchConfiguration('default_world_file')
-            ]),
-            'verbose': 'true',
-            'pause': 'false',
-            'use_sim_time': 'true'
+            'gz_args': ['-r', '-v4', LaunchConfiguration('world')],
+            'on_exit_shutdown': 'true'
         }.items()
     )
     
@@ -122,21 +114,21 @@ def generate_launch_description():
         name='ros_gz_bridge',
         arguments=[
             # Camera topics
-            '/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
-            '/camera/depth/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image',
-            '/camera/depth/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
-            '/camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
+            '/camera/image_raw@sensor_msgs/msg/Image@gz.msgs.Image',
+            '/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
+            '/camera/depth/image_raw@sensor_msgs/msg/Image@gz.msgs.Image',
+            '/camera/depth/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
+            '/camera/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked',
             
             # Control topics
-            '/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist',
-            '/odom@nav_msgs/msg/Odometry@ignition.msgs.Odometry',
+            '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
+            '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
             
             # Joint states
-            '/joint_states@sensor_msgs/msg/JointState@ignition.msgs.Model',
+            '/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model',
             
             # TF
-            '/tf@tf2_msgs/msg/TFMessage@ignition.msgs.Pose_V'
+            '/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V'
         ],
         output='screen'
     )
@@ -146,7 +138,7 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         name='clock_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock'],
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
         output='screen'
     )
     
