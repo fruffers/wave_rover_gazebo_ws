@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<robot name="wave_rover" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Base -->
+  <link name="base_link">
+    <visual>
+    <pose>0 0 0 0 0 0</pose>
+      <geometry>
+        <mesh filename="package://wave_rover_description/meshes/wave_rover_model.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3 0.2 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="2.0"/>
+      <inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </link>
+
+  <!-- Bracket Stand -->
+  <link name="bracket_stand_link">
+    <visual>
+      <geometry>
+        <box size="0.045 0.11 0.04"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="1e-5" iyy="1e-5" izz="1e-5" ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </link>
+
+  <joint name="bracket_stand_mount" type="fixed">
+    <parent link="base_link"/>
+    <child link="bracket_stand_link"/>
+    <origin xyz="0.0 0.0042 0.07" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Camera Bracket -->
+  <link name="camera_bracket_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://wave_rover_description/meshes/realsense_bracket.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </link>
+
+  <joint name="bracket_mount" type="fixed">
+    <parent link="bracket_stand_link"/>
+    <child link="camera_bracket_link"/>
+    <origin xyz="0.0 -0.04 0.02" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Camera -->
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://wave_rover_description/meshes/d435.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.1 0.1 1.0 1.0"/>
+      </material>
+    </visual>
+    <inertial>
+      <mass value="0.2"/>
+      <inertia ixx="1e-4" iyy="1e-4" izz="1e-4" ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </link>
+
+  <joint name="camera_mount" type="fixed">
+    <parent link="camera_bracket_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.0 -0.03 0.02" rpy="0.349 0 0"/>
+  </joint>
+
+  <!-- Sensor Link -->
+  <link name="camera_sensor_link">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="1e-8" iyy="1e-8" izz="1e-8" ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </link>
+
+  <joint name="camera_sensor_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_sensor_link"/>
+    <origin xyz="0 0 0" rpy="0 0 -1.5708"/>
+  </joint>
+
+  <!-- Optical Frame -->
+  <link name="camera_link_optical">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="1e-8" iyy="1e-8" izz="1e-8" ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </link>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_sensor_link"/>
+    <child link="camera_link_optical"/>
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+  </joint>
+
+  <!-- Gazebo Plugins -->
+  <gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace>/wave_rover</namespace>
+      </ros>
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="camera_sensor_link">
+    <sensor name="camera" type="depth">
+      <update_rate>30.0</update_rate>
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>5.0</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <ros>
+          <namespace>/camera</namespace>
+        </ros>
+        <camera_name>camera</camera_name>
+        <image_topic_name>image_raw</image_topic_name>
+        <depth_image_topic_name>depth/image_raw</depth_image_topic_name>
+        <info_topic_name>camera_info</info_topic_name>
+        <point_cloud_topic_name>depth/points</point_cloud_topic_name>
+        <frame_name>camera_link_optical</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Prevent fixed joint lumping -->
+  <gazebo>
+    <preserveFixedJoint>true</preserveFixedJoint>
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
+  
+   <!-- Ensure robot is dynamic -->
+  <gazebo>
+    <static>false</static>
+  </gazebo>
+
+
+</robot>
+

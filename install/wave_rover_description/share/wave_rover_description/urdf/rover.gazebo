@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<robot>
+ <gazebo reference="base_link">
+ <mu1>0.2</mu1>
+ <mu2>0.2</mu2>
+ <material>Gazebo/Black</material>
+ </gazebo>
+ 
+ <gazebo reference="bracket_stand_link">
+ <material>Gazebo/Black</material>
+ </gazebo>
+ 
+ <gazebo reference="camera_bracket_link">
+ <material>Gazebo/Black</material>
+ </gazebo>
+ 
+ <gazebo reference="camera_link">
+ <material>Gazebo/Silver</material>
+ </gazebo>
+ 
+ <gazebo reference="front_left_wheel">
+ <mu1>0.2</mu1>
+ <mu2>0.2</mu2>
+ <material>Gazebo/Black</material>
+ </gazebo>
+ 
+ <gazebo reference="front_right_wheel">
+ <mu1>0.2</mu1>
+ <mu2>0.2</mu2>
+ <material>Gazebo/Black</material>
+ </gazebo>
+ 
+ <gazebo reference="back_left_wheel">
+ <mu1>0.2</mu1>
+ <mu2>0.2</mu2>
+ <material>Gazebo/Black</material>
+ </gazebo>
+ 
+ <gazebo reference="back_right_wheel">
+ <mu1>0.2</mu1>
+ <mu2>0.2</mu2>
+ <material>Gazebo/Black</material>
+ </gazebo>
+ 
+   <gazebo reference="camera_sensor_link">
+    <sensor name="camera" type="depth">
+      <update_rate>30.0</update_rate>
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>5.0</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <ros>
+          <namespace>/camera</namespace>
+        </ros>
+        <camera_name>camera</camera_name>
+        <image_topic_name>image_raw</image_topic_name>
+        <depth_image_topic_name>depth/image_raw</depth_image_topic_name>
+        <info_topic_name>camera_info</info_topic_name>
+        <point_cloud_topic_name>depth/points</point_cloud_topic_name>
+        <frame_name>camera_link_optical</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+ 
+     <!-- Diff Drive Plugin -->
+    <gazebo>
+	    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+	      <ros>
+		<namespace>/wave_rover</namespace>
+	      </ros>
+	      <num_wheel_pairs>2</num_wheel_pairs>
+	      
+	      	<left_joint>front_left_wheel_joint</left_joint>
+	      	<left_joint>back_left_wheel_joint</left_joint>
+
+	      	<right_joint>front_right_wheel_joint</right_joint>
+	      	<right_joint>back_right_wheel_joint</right_joint>
+	      
+	      <wheel_separation>${base_link_y_dim+wheel_length}</wheel_separation>
+ 	      <wheel_diameter>${2*wheel_radius}</wheel_diameter>
+ 	      <max_wheel_torque>5000</max_wheel_torque>
+ 	      <max_wheel_acceleration>7.0</max_wheel_acceleration>
+	      <!--<wheelAcceleration>1.0</wheelAcceleration>-->
+	      
+	      <command_topic>cmd_vel</command_topic>
+	      <odometry_topic>odom</odometry_topic>
+	      <odometrySource>1</odometrySource>
+	      <odometry_frame>odom</odometry_frame>
+	      <robot_base_frame>dummy</robot_base_frame>
+	      
+	      <publish_odom>true</publish_odom>
+	      <publish_odom_tf>true</publish_odom_tf>
+	      <publish_wheel_tf>false</publish_wheel_tf>
+	    </plugin>	
+    </gazebo>
+
+  <!-- Prevent fixed joint lumping -->
+  <gazebo>
+    <preserveFixedJoint>true</preserveFixedJoint>
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
+  
+   <!-- Ensure robot is dynamic -->
+  <gazebo>
+    <static>false</static>
+  </gazebo>
+ 
+</robot>

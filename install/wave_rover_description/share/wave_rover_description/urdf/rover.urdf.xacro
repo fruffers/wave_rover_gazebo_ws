@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<robot name="wave_rover" xmlns:xacro="http://ros.org/wiki/xacro">
+
+ <!-- Body dimensions -->
+ <xacro:property name="base_link_x_dim" value="0.1828"/>
+ <xacro:property name="base_link_y_dim" value="0.0753"/>
+ <xacro:property name="base_link_z_dim" value="0.0542"/>
+ 
+ <xacro:property name="base_density" value="2710.0"/>
+ <xacro:property name="wheel_density" value="2710.0"/>
+ 
+ <xacro:property name="pi_const" value="3.14159265"/>
+ 
+ <xacro:property name="wheel_length" value="0.042"/>
+ <xacro:property name="wheel_radius" value="0.04"/>
+ <xacro:property name="wheel_center" value="-0.04"/>
+
+ <!-- Raise everything by wheel_radius to ensure wheels sit on ground -->
+ <xacro:property name="z_offset" value="${wheel_radius}"/>
+
+ <xacro:property name="base_mass" value="${base_density*base_link_x_dim*base_link_y_dim*base_link_z_dim}"/>
+ <xacro:property name="wheel_mass" value="${wheel_density*pi_const*wheel_radius*wheel_length}"/>
+ 
+ <xacro:property name="i_wheel" value="${0.5*wheel_mass*(3.0*wheel_radius*wheel_radius*wheel_length*wheel_length)}"/>
+ <xacro:property name="iz_wheel" value="${0.5*wheel_mass*wheel_radius*wheel_length*wheel_length}"/>
+
+ <xacro:macro name="inertia_wheel">
+   <inertial>
+     <origin rpy="0 0 0" xyz="0 0 0"/>
+     <mass value="${wheel_mass}"/>
+     <inertia ixx="${i_wheel}" ixy="0.0" ixz="0.0" iyy="${i_wheel}" iyz="0" izz="${iz_wheel}"/>
+   </inertial>
+ </xacro:macro>
+
+ <xacro:include filename="$(find wave_rover_description)/urdf/rover.gazebo"/>
+
+ <!-- Material Definitions -->
+ <material name="black">
+   <color rgba="0.2 0.2 0.2 1.0"/>
+ </material>
+ <material name="grey">
+   <color rgba="0.15 0.15 0.15 1.0"/>
+ </material>
+ <material name="silver">
+   <color rgba="0.75 0.75 0.75 1.0"/>
+ </material>
+
+ <link name="dummy"/>
+ <joint name="dummy_joint" type="fixed">
+   <parent link="dummy"/>
+   <child link="base_link"/>
+ </joint>
+
+ <!-- Base Link -->
+ <link name="base_link">
+   <visual>
+     <origin rpy="0 0 0" xyz="0 0 ${0.02 + z_offset}"/>
+     <geometry>
+       <mesh filename="package://wave_rover_description/meshes/roverbody.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="grey"/>
+   </visual>
+   <collision>
+     <origin xyz="0 0 ${z_offset}" rpy="0 0 0"/>
+     <geometry>
+       <box size="${base_link_x_dim} ${base_link_y_dim} ${base_link_z_dim}"/>
+     </geometry>
+   </collision>
+   <inertial>
+     <mass value="${base_mass}"/>
+     <inertia ixx="${(1.0/12.0)*base_mass*(base_link_y_dim*base_link_y_dim*base_link_z_dim*base_link_z_dim)}"
+              iyy="0.01"
+              izz="${(1.0/12.0)*base_mass*(base_link_y_dim*base_link_y_dim*base_link_x_dim*base_link_x_dim)}"
+              ixy="0.0" ixz="0.0" iyz="0.0"/>
+   </inertial>
+ </link>
+
+ <link name="bracket_stand_link">
+   <visual>
+     <geometry>
+       <box size="0.045 0.11 0.04"/>
+     </geometry>
+     <material name="grey"/>
+   </visual>
+   <inertial>
+     <mass value="0.1"/>
+     <inertia ixx="1e-5" iyy="1e-5" izz="1e-5" ixy="0.0" ixz="0.0" iyz="0.0"/>
+   </inertial>
+ </link>
+
+ <joint name="bracket_stand_mount" type="fixed">
+   <parent link="base_link"/>
+   <child link="bracket_stand_link"/>
+   <origin xyz="0.0 0.0042 ${0.07 + z_offset}" rpy="0 0 0"/>
+ </joint>
+
+ <link name="camera_bracket_link">
+   <visual>
+     <geometry>
+       <mesh filename="package://wave_rover_description/meshes/realsense_bracket.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="grey"/>
+   </visual>
+   <inertial>
+     <mass value="0.05"/>
+     <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0.0" ixz="0.0" iyz="0.0"/>
+   </inertial>
+ </link>
+
+ <joint name="bracket_mount" type="fixed">
+   <parent link="bracket_stand_link"/>
+   <child link="camera_bracket_link"/>
+   <origin xyz="0.0 -0.04 0.02" rpy="0 0 0"/>
+ </joint>
+
+ <link name="camera_link">
+   <visual>
+     <geometry>
+       <mesh filename="package://wave_rover_description/meshes/d435.stl" scale="0.01 0.01 0.01"/>
+     </geometry>
+     <material name="silver"/>
+   </visual>
+   <inertial>
+     <mass value="0.2"/>
+     <inertia ixx="1e-4" iyy="1e-4" izz="1e-4" ixy="0.0" ixz="0.0" iyz="0.0"/>
+   </inertial>
+ </link>
+
+ <joint name="camera_mount" type="fixed">
+   <parent link="camera_bracket_link"/>
+   <child link="camera_link"/>
+   <origin xyz="0.0 -0.03 0.02" rpy="0.349 0 0"/>
+ </joint>
+
+ <link name="camera_sensor_link">
+   <inertial>
+     <mass value="0.001"/>
+     <inertia ixx="1e-8" iyy="1e-8" izz="1e-8" ixy="0.0" ixz="0.0" iyz="0.0"/>
+   </inertial>
+ </link>
+
+ <joint name="camera_sensor_joint" type="fixed">
+   <parent link="camera_link"/>
+   <child link="camera_sensor_link"/>
+   <origin xyz="0 0 0" rpy="0 0 -1.5708"/>
+ </joint>
+
+ <link name="camera_link_optical">
+   <inertial>
+     <mass value="0.001"/>
+     <inertia ixx="1e-8" iyy="1e-8" izz="1e-8" ixy="0.0" ixz="0.0" iyz="0.0"/>
+   </inertial>
+ </link>
+
+ <joint name="camera_optical_joint" type="fixed">
+   <parent link="camera_sensor_link"/>
+   <child link="camera_link_optical"/>
+   <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+ </joint>
+
+ <!-- Wheel Links -->
+ <!-- Front Left Wheel -->
+ <link name="front_left_wheel">
+   <xacro:inertia_wheel/>
+   <collision>
+     <origin rpy="1.5708 0 0" xyz="0.061 0.050 ${z_offset}"/>
+     <geometry>
+       <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+     </geometry>
+   </collision>
+   <visual>
+     <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+     <geometry>
+       <mesh filename="package://wave_rover_description/meshes/leftside_wheel.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="black"/>
+   </visual>
+ </link>
+
+ <joint name="front_left_wheel_joint" type="revolute">
+   <parent link="base_link"/>
+   <child link="front_left_wheel"/>
+   <origin xyz="-0.061 -0.050 ${z_offset}" rpy="0 0 0"/>
+   <axis xyz="1 0 0">
+     <dynamics damping="1.0" friction="1.0"/>
+   </axis>
+   <limit lower="-1000" upper="1000" effort="10.0" velocity="10.0"/>
+ </joint>
+
+ <!-- Front Right Wheel -->
+ <link name="front_right_wheel">
+   <xacro:inertia_wheel/>
+   <collision>
+     <origin rpy="1.5708 0 0" xyz="0.061 -0.050 ${z_offset}"/>
+     <geometry>
+       <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+     </geometry>
+   </collision>
+   <visual>
+     <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+     <geometry>
+       <mesh filename="package://wave_rover_description/meshes/rightside_wheel.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="black"/>
+   </visual>
+ </link>
+
+ <joint name="front_right_wheel_joint" type="revolute">
+   <parent link="base_link"/>
+   <child link="front_right_wheel"/>
+   <origin xyz="0.061 -0.050 ${z_offset}" rpy="0 0 0"/>
+   <axis xyz="1 0 0">
+     <dynamics damping="1.0" friction="1.0"/>
+   </axis>
+   <limit lower="-1000" upper="1000" effort="10.0" velocity="10.0"/>
+ </joint>
+
+ <!-- Back Left Wheel -->
+ <link name="back_left_wheel">
+   <xacro:inertia_wheel/>
+   <collision>
+     <origin rpy="1.5708 0 0" xyz="-0.061 0.050 ${z_offset}"/>
+     <geometry>
+       <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+     </geometry>
+   </collision>
+   <visual>
+     <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+     <geometry>
+       <mesh filename="package://wave_rover_description/meshes/leftside_wheel.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="black"/>
+   </visual>
+ </link>
+
+ <joint name="back_left_wheel_joint" type="revolute">
+   <parent link="base_link"/>
+   <child link="back_left_wheel"/>
+   <origin xyz="-0.061 0.050 ${z_offset}" rpy="0 0 0"/>
+   <axis xyz="1 0 0">
+     <dynamics damping="1.0" friction="1.0"/>
+   </axis>
+   <limit lower="-1000" upper="1000" effort="10.0" velocity="10.0"/>
+ </joint>
+
+ <!-- Back Right Wheel -->
+ <link name="back_right_wheel">
+   <xacro:inertia_wheel/>
+   <collision>
+     <origin rpy="1.5708 0 0" xyz="-0.061 -0.050 ${z_offset}"/>
+     <geometry>
+       <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
+     </geometry>
+   </collision>
+   <visual>
+     <origin rpy="1.570795 0 0" xyz="0 0 0"/>
+     <geometry>
+       <mesh filename="package://wave_rover_description/meshes/rightside_wheel.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="black"/>
+   </visual>
+ </link>
+ 
+  <joint name="back_right_wheel_joint" type="revolute">
+   <parent link="base_link"/>
+   <child link="back_right_wheel"/>
+   <origin xyz="0.061 0.050 ${z_offset}" rpy="0 0 0"/>
+   <axis xyz="1 0 0">
+     <dynamics damping="1.0" friction="1.0"/>
+   </axis>
+   <limit lower="-1000" upper="1000" effort="10.0" velocity="10.0"/>
+ </joint>
+
+</robot>
+

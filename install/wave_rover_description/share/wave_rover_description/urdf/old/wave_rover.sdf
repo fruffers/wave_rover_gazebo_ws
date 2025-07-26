@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="wave_rover">
+
+    <!-- Base Link -->
+    <link name="base_link">
+      <gravity>true</gravity>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>2.0</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <iyy>0.01</iyy>
+          <izz>0.01</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="base_collision">
+        <pose>0 0 0 -0.1 0 0</pose>  <!-- shifted to align bottom with ground -->
+        <geometry>
+          <box>
+            <size>0.3 0.2 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="base_visual">
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/wave_rover_model.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1.0</ambient>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Bracket Stand Link -->
+    <link name="bracket_stand_link">
+      <pose>0 0.0042 0.07 0 0 0</pose>
+      <visual name="bracket_stand_visual">
+        <geometry>
+          <box>
+            <size>0.045 0.11 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1.0</ambient>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Camera Bracket Link -->
+    <link name="camera_bracket_link">
+      <pose>0 -0.0358 0.09 0 0 0</pose>
+      <visual name="camera_bracket_visual">
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/realsense_bracket.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Camera Link -->
+    <link name="camera_link">
+      <pose>0 -0.0658 0.11 0.349 0 0</pose>
+      <visual name="camera_visual">
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/d435.stl</uri>
+            <scale>0.01 0.01 0.01</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 1.0 1.0</ambient>
+        </material>
+      </visual>
+      <sensor name="depth_camera" type="depth">
+        <pose>0 0 0 0.349 0 -1.5708</pose>
+        <update_rate>30.0</update_rate>
+        <camera>
+          <horizontal_fov>1.3962634</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>5.0</far>
+          </clip>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <ros>
+            <namespace>/camera</namespace>
+          </ros>
+          <camera_name>camera</camera_name>
+          <image_topic_name>image_raw</image_topic_name>
+          <depth_image_topic_name>depth/image_raw</depth_image_topic_name>
+          <info_topic_name>camera_info</info_topic_name>
+          <point_cloud_topic_name>depth/points</point_cloud_topic_name>
+          <frame_name>camera_link_optical</frame_name>
+        </plugin>
+      </sensor>
+    </link>
+
+    <!-- Camera Optical Frame Link -->
+    <link name="camera_link_optical">
+      <pose>0 0 0 -1.5708 0 -1.5708</pose>
+    </link>
+
+    <!-- Fixed Joints -->
+    <joint name="bracket_stand_mount" type="fixed">
+      <parent>base_link</parent>
+      <child>bracket_stand_link</child>
+    </joint>
+
+    <joint name="bracket_mount" type="fixed">
+      <parent>bracket_stand_link</parent>
+      <child>camera_bracket_link</child>
+    </joint>
+
+    <joint name="camera_mount" type="fixed">
+      <parent>camera_bracket_link</parent>
+      <child>camera_link</child>
+    </joint>
+
+    <joint name="camera_optical_joint" type="fixed">
+      <parent>camera_link</parent>
+      <child>camera_link_optical</child>
+    </joint>
+
+    <!-- Diff Drive Plugin -->
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace>/wave_rover</namespace>
+      </ros>
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+    </plugin>
+
+    <static>false</static>
+
+  </model>
+</sdf>
+

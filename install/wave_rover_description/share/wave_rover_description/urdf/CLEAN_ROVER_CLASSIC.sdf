@@ -1,0 +1,528 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="wave_rover">
+    <!-- Base Link -->
+    <link name="base_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>5.0</mass>
+        <inertia>
+          <ixx>0.02</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.02</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.02</izz>
+        </inertia>
+      </inertial>
+      <visual name="base_visual">
+        <pose>0 0 0.06 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/roverbody.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.15 0.15 0.15 1.0</ambient>
+          <diffuse>0.15 0.15 0.15 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+      <collision name="base_collision">
+        <pose>0 0 0.04 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1828 0.0753 0.0542</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+
+    <!-- Bracket Stand Link -->
+    <link name="bracket_stand_link">
+      <pose relative_to="base_link">0.0 0.0042 0.11 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>1e-5</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1e-5</iyy>
+          <iyz>0.0</iyz>
+          <izz>1e-5</izz>
+        </inertia>
+      </inertial>
+      <visual name="bracket_stand_visual">
+        <geometry>
+          <box>
+            <size>0.045 0.11 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.15 0.15 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+      <collision name="bracket_stand_collision">
+        <geometry>
+          <box>
+            <size>0.045 0.11 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Bracket Stand Joint -->
+    <joint name="bracket_stand_mount" type="fixed">
+      <parent>base_link</parent>
+      <child>bracket_stand_link</child>
+    </joint>
+
+    <!-- Camera Bracket Link -->
+    <link name="camera_bracket_link">
+      <pose relative_to="bracket_stand_link">0.0 -0.04 0.02 0 0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>1e-6</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1e-6</iyy>
+          <iyz>0.0</iyz>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="camera_bracket_visual">
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/realsense_bracket.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.15 0.15 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+      <collision name="camera_bracket_collision">
+        <geometry>
+          <box>
+            <size>0.02 0.08 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Camera Bracket Joint -->
+    <joint name="bracket_mount" type="fixed">
+      <parent>bracket_stand_link</parent>
+      <child>camera_bracket_link</child>
+    </joint>
+
+    <!-- Camera Link -->
+    <link name="camera_link">
+      <pose relative_to="camera_bracket_link">0.0 -0.03 0.02 0.349 0 0</pose>
+      <inertial>
+        <mass>0.0615752</mass>
+        <inertia>
+          <ixx>9.108e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.51e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8.931e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="camera_link_collision">
+        <geometry>
+          <box>
+            <size>0.09 0.025 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="camera_visual">
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/models/intel_realsense_d435/meshes/realsense.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.2 0.2 0.2 1.0</specular>
+        </material>
+      </visual>
+
+      <!-- Camera Sensor -->
+      <sensor name="camera" type="camera">
+        <update_rate>30</update_rate>
+        <camera name="head">
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>wave_rover/camera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+    </link>
+
+    <!-- Camera Mount Joint -->
+    <joint name="camera_mount" type="fixed">
+      <parent>camera_bracket_link</parent>
+      <child>camera_link</child>
+    </joint>
+
+    <!-- Front Left Wheel -->
+    <link name="front_left_wheel">
+      <pose>-0.061 -0.050 0.04 0 0 0</pose>
+      <inertial>
+        <mass>0.451</mass>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000395</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000361</izz>
+        </inertia>
+      </inertial>
+      <collision name="front_left_wheel_collision">
+        <pose>0 0 0 1.5708 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.042</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="front_left_wheel_visual">
+        <pose>0 0 0 1.570795 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/leftside_wheel.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Front Left Wheel Joint -->
+    <joint name="front_left_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>1.0</friction>
+        </dynamics>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>10.0</effort>
+          <velocity>10.0</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Front Right Wheel -->
+    <link name="front_right_wheel">
+      <pose>0.061 -0.050 0.04 0 0 0</pose>
+      <inertial>
+        <mass>0.451</mass>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000395</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000361</izz>
+        </inertia>
+      </inertial>
+      <collision name="front_right_wheel_collision">
+        <pose>0 0 0 1.5708 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.042</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="front_right_wheel_visual">
+        <pose>0 0 0 1.570795 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/rightside_wheel.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Front Right Wheel Joint -->
+    <joint name="front_right_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_right_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>1.0</friction>
+        </dynamics>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>10.0</effort>
+          <velocity>10.0</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Back Left Wheel -->
+    <link name="back_left_wheel">
+      <pose>-0.061 0.050 0.04 0 0 0</pose>
+      <inertial>
+        <mass>0.451</mass>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000395</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000361</izz>
+        </inertia>
+      </inertial>
+      <collision name="back_left_wheel_collision">
+        <pose>0 0 0 1.5708 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.042</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="back_left_wheel_visual">
+        <pose>0 0 0 1.570795 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/leftside_wheel.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Back Left Wheel Joint -->
+    <joint name="back_left_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>back_left_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>1.0</friction>
+        </dynamics>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>10.0</effort>
+          <velocity>10.0</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Back Right Wheel -->
+    <link name="back_right_wheel">
+      <pose>0.061 0.050 0.04 0 0 0</pose>
+      <inertial>
+        <mass>0.451</mass>
+        <inertia>
+          <ixx>0.000395</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000395</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000361</izz>
+        </inertia>
+      </inertial>
+      <collision name="back_right_wheel_collision">
+        <pose>0 0 0 1.5708 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.042</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="back_right_wheel_visual">
+        <pose>0 0 0 1.570795 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://wave_rover_description/meshes/rightside_wheel.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Back Right Wheel Joint -->
+    <joint name="back_right_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>back_right_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>1.0</friction>
+        </dynamics>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+          <effort>10.0</effort>
+          <velocity>10.0</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Differential Drive Plugin for Classic Gazebo -->
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100</updateRate>
+      <leftJoint>front_left_wheel_joint</leftJoint>
+      <rightJoint>front_right_wheel_joint</rightJoint>
+      <wheelSeparation>0.1</wheelSeparation>
+      <wheelDiameter>0.08</wheelDiameter>
+      <torque>20</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <publishWheelTF>true</publishWheelTF>
+      <publishWheelJointState>true</publishWheelJointState>
+      <wheelAcceleration>0</wheelAcceleration>
+      <wheelTorque>5</wheelTorque>
+      <rosDebugLevel>na</rosDebugLevel>
+    </plugin>
+
+  </model>
+</sdf>
