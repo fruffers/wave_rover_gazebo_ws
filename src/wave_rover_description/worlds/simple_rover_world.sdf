@@ -45,7 +45,7 @@
 
     <!-- Include the Wave Rover model -->
     <include>
-      <uri>/home/louise/Development/wave_rover_gazebo_ws/src/wave_rover_description/urdf/CLEAN_ROVER_MANUAL.sdf</uri>
+      <uri>file://urdf/CLEAN_ROVER_MANUAL.sdf</uri>
       <pose>0 0 0.1 0 0 0</pose>
     </include>
 

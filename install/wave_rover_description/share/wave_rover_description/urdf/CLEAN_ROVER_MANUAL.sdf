@@ -19,7 +19,7 @@
         <pose>0 0 0.06 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>package://wave_rover_description/meshes/roverbody.stl</uri>
+            <uri>meshes/roverbody.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -113,7 +113,7 @@
       <visual name="camera_bracket_visual">
         <geometry>
           <mesh>
-            <uri>package://wave_rover_description/meshes/realsense_bracket.stl</uri>
+            <uri>meshes/realsense_bracket.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -192,7 +192,7 @@
       <visual name="camera_sensor_visual">
         <geometry>
           <mesh>
-            <uri>package://wave_rover_description/models/intel_realsense_d435/meshes/realsense.dae</uri>
+            <uri>models/intel_realsense_d435/meshes/realsense.dae</uri>
             <submesh>
               <name>RealSense</name>
               <center>false</center>
@@ -204,16 +204,16 @@
           <specular>1.0 1.0 1.0 1.0</specular>
           <pbr>
             <metal>
-              <albedo_map>package://wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Albedo.png</albedo_map>
-              <normal_map>package://wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Normal.png</normal_map>
-              <metalness_map>package://wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Metalness.png</metalness_map>
-              <roughness_map>package://wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Roughness.png</roughness_map>
+              <albedo_map>models/intel_realsense_d435/materials/textures/RealSense_Albedo.png</albedo_map>
+              <normal_map>models/intel_realsense_d435/materials/textures/RealSense_Normal.png</normal_map>
+              <metalness_map>models/intel_realsense_d435/materials/textures/RealSense_Metalness.png</metalness_map>
+              <roughness_map>models/intel_realsense_d435/materials/textures/RealSense_Roughness.png</roughness_map>
             </metal>
           </pbr>
            <!-- fallback to script if no PBR support-->
           <script>
-            <uri>package://wave_rover_description/models/intel_realsense_d435/materials/scripts/</uri>
-            <uri>package://wave_rover_description/models/intel_realsense_d435/materials/textures/</uri>
+            <uri>models/intel_realsense_d435/materials/scripts/</uri>
+            <uri>models/intel_realsense_d435/materials/textures/</uri>
             <name>UrbanTile/RealSense_Diffuse</name>
           </script>
         </material>
@@ -340,7 +340,7 @@
         <pose>0 0 0 1.570795 0 0</pose>
         <geometry>
           <mesh>
-            <uri>package://wave_rover_description/meshes/leftside_wheel.stl</uri>
+            <uri>meshes/leftside_wheel.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -414,7 +414,7 @@
         <pose>0 0 0 1.570795 0 0</pose>
         <geometry>
           <mesh>
-            <uri>package://wave_rover_description/meshes/rightside_wheel.stl</uri>
+            <uri>meshes/rightside_wheel.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -488,7 +488,7 @@
         <pose>0 0 0 1.570795 0 0</pose>
         <geometry>
           <mesh>
-            <uri>package://wave_rover_description/meshes/leftside_wheel.stl</uri>
+            <uri>meshes/leftside_wheel.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -563,7 +563,7 @@
         <pose>0 0 0 1.570795 0 0</pose>
         <geometry>
           <mesh>
-            <uri>package://wave_rover_description/meshes/rightside_wheel.stl</uri>
+            <uri>meshes/rightside_wheel.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
