@@ -24,14 +24,9 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.15 0.15 0.15 1.0</ambient>
-          <diffuse>0.15 0.15 0.15 1.0</diffuse>
-          <specular>0.1 0.1 0.1 1.0</specular>
-        </material>
-        <material>
-          <ambient>0.6 0.6 0.6 1.0</ambient>
-          <diffuse>0.6 0.6 0.6 1.0</diffuse>
-          <specular>0.2 0.2 0.2 1.0</specular>
+          <ambient>0.08 0.08 0.08 1.0</ambient>
+          <diffuse>0.08 0.08 0.08 1.0</diffuse>
+          <specular>0.05 0.05 0.05 1.0</specular>
         </material>
       </visual>
       <collision name="base_collision">
@@ -81,12 +76,8 @@
           </box>
         </geometry>
         <material>
-          <diffuse>0.15 0.15 0.15 1.0</diffuse>
-          <specular>0.1 0.1 0.1 1.0</specular>
-        </material>
-        <material>
-          <diffuse>0.3 0.3 0.3 1.0</diffuse>
-          <specular>0.15 0.15 0.15 1.0</specular>
+          <diffuse>0.06 0.06 0.06 1.0</diffuse>
+          <specular>0.03 0.03 0.03 1.0</specular>
         </material>
       </visual>
       <collision name="bracket_stand_collision">
@@ -127,12 +118,8 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.15 0.15 0.15 1.0</diffuse>
-          <specular>0.1 0.1 0.1 1.0</specular>
-        </material>
-        <material>
-          <diffuse>0.3 0.3 0.3 1.0</diffuse>
-          <specular>0.15 0.15 0.15 1.0</specular>
+          <diffuse>0.04 0.04 0.04 1.0</diffuse>
+          <specular>0.02 0.02 0.02 1.0</specular>
         </material>
       </visual>
       <collision name="camera_bracket_collision">
@@ -358,12 +345,8 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.2 0.2 0.2 1.0</diffuse>
-          <specular>0.1 0.1 0.1 1.0</specular>
-        </material>
-        <material>
-          <diffuse>0.8 0.8 0.8 1.0</diffuse>
-          <specular>0.2 0.2 0.2 1.0</specular>
+          <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          <specular>0.01 0.01 0.01 1.0</specular>
         </material>
       </visual>
     </link>
@@ -436,12 +419,8 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.2 0.2 0.2 1.0</diffuse>
-          <specular>0.1 0.1 0.1 1.0</specular>
-        </material>
-        <material>
-          <diffuse>0.8 0.8 0.8 1.0</diffuse>
-          <specular>0.2 0.2 0.2 1.0</specular>
+          <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          <specular>0.01 0.01 0.01 1.0</specular>
         </material>
       </visual>
     </link>
@@ -514,12 +493,8 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.2 0.2 0.2 1.0</diffuse>
-          <specular>0.1 0.1 0.1 1.0</specular>
-        </material>
-        <material>
-          <diffuse>0.8 0.8 0.8 1.0</diffuse>
-          <specular>0.2 0.2 0.2 1.0</specular>
+          <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          <specular>0.01 0.01 0.01 1.0</specular>
         </material>
       </visual>
     </link>
@@ -539,10 +514,6 @@
           <lower>-1000</lower>
           <upper>1000</upper>
           <effort>10.0</effort>
-        <material>
-          <diffuse>0.85 0.85 0.85 1.0</diffuse>
-          <specular>0.9 0.9 0.9 1.0</specular>
-        </material>
           <velocity>10.0</velocity>
         </limit>
       </axis>
@@ -597,8 +568,8 @@
           </mesh>
         </geometry>
         <material>
-          <diffuse>0.2 0.2 0.2 1.0</diffuse>
-          <specular>0.1 0.1 0.1 1.0</specular>
+          <diffuse>0.02 0.02 0.02 1.0</diffuse>
+          <specular>0.01 0.01 0.01 1.0</specular>
         </material>
       </visual>
     </link>
