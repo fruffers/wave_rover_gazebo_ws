@@ -57,7 +57,7 @@
 
     <!-- Bracket Stand Link -->
     <link name="bracket_stand_link">
-      <pose relative_to="base_link">0 0 0 0 0 0</pose>
+      <pose relative_to="base_link">0.0 0.0042 0.11 0 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -98,7 +98,7 @@
 
     <!-- Camera Bracket Link -->
     <link name="camera_bracket_link">
-      <pose relative_to="bracket_stand_link">0 0 0 0 0 0</pose>
+      <pose relative_to="bracket_stand_link">0.0 -0.04 0.02 0 0 0</pose>
       <inertial>
         <mass>0.05</mass>
         <inertia>
@@ -140,7 +140,7 @@
 
     <!-- Camera Link -->
     <link name="camera_link">
-      <pose relative_to="camera_bracket_link">0.0 -0.04 0.02 0 0 0</pose>
+      <pose relative_to="camera_bracket_link">0.0 -0.006 0.025 0.349 0 0</pose>
       <inertial>
         <mass>0.0615752</mass>
         <inertia>

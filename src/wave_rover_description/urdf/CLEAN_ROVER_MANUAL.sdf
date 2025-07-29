@@ -28,6 +28,11 @@
           <diffuse>0.15 0.15 0.15 1.0</diffuse>
           <specular>0.1 0.1 0.1 1.0</specular>
         </material>
+        <material>
+          <ambient>0.6 0.6 0.6 1.0</ambient>
+          <diffuse>0.6 0.6 0.6 1.0</diffuse>
+          <specular>0.2 0.2 0.2 1.0</specular>
+        </material>
       </visual>
       <collision name="base_collision">
         <pose>0 0 0.04 0 0 0</pose>
@@ -57,7 +62,7 @@
 
     <!-- Bracket Stand Link -->
     <link name="bracket_stand_link">
-      <pose relative_to="base_link">0 0 0 0 0 0</pose>
+      <pose relative_to="base_link">0.0 0.0042 0.11 0 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -79,6 +84,10 @@
           <diffuse>0.15 0.15 0.15 1.0</diffuse>
           <specular>0.1 0.1 0.1 1.0</specular>
         </material>
+        <material>
+          <diffuse>0.3 0.3 0.3 1.0</diffuse>
+          <specular>0.15 0.15 0.15 1.0</specular>
+        </material>
       </visual>
       <collision name="bracket_stand_collision">
         <geometry>
@@ -98,7 +107,7 @@
 
     <!-- Camera Bracket Link -->
     <link name="camera_bracket_link">
-      <pose relative_to="bracket_stand_link">0 0 0 0 0 0</pose>
+      <pose relative_to="bracket_stand_link">0.0 -0.04 0.02 0 0 0</pose>
       <inertial>
         <mass>0.05</mass>
         <inertia>
@@ -121,6 +130,10 @@
           <diffuse>0.15 0.15 0.15 1.0</diffuse>
           <specular>0.1 0.1 0.1 1.0</specular>
         </material>
+        <material>
+          <diffuse>0.3 0.3 0.3 1.0</diffuse>
+          <specular>0.15 0.15 0.15 1.0</specular>
+        </material>
       </visual>
       <collision name="camera_bracket_collision">
         <geometry>
@@ -140,7 +153,7 @@
 
     <!-- Camera Link -->
     <link name="camera_link">
-      <pose relative_to="camera_bracket_link">0.0 -0.04 0.02 0 0 0</pose>
+      <pose relative_to="camera_bracket_link">0.0 -0.006 0.025 0.349 0 0</pose>
       <inertial>
         <mass>0.0615752</mass>
         <inertia>
@@ -165,7 +178,7 @@
     <joint name="camera_mount" type="fixed">
       <parent>camera_bracket_link</parent>
       <child>camera_link</child>
-      <pose>0.0 -0.03 0.02 0.349 0 0</pose>
+      <pose>0.0 -0.006 0.025 0.349 0 0</pose>
     </joint>
 
     <!-- Camera Sensor Link -->
@@ -348,6 +361,10 @@
           <diffuse>0.2 0.2 0.2 1.0</diffuse>
           <specular>0.1 0.1 0.1 1.0</specular>
         </material>
+        <material>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.2 0.2 0.2 1.0</specular>
+        </material>
       </visual>
     </link>
 
@@ -421,6 +438,10 @@
         <material>
           <diffuse>0.2 0.2 0.2 1.0</diffuse>
           <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+        <material>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.2 0.2 0.2 1.0</specular>
         </material>
       </visual>
     </link>
@@ -496,6 +517,10 @@
           <diffuse>0.2 0.2 0.2 1.0</diffuse>
           <specular>0.1 0.1 0.1 1.0</specular>
         </material>
+        <material>
+          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <specular>0.2 0.2 0.2 1.0</specular>
+        </material>
       </visual>
     </link>
 
@@ -514,6 +539,10 @@
           <lower>-1000</lower>
           <upper>1000</upper>
           <effort>10.0</effort>
+        <material>
+          <diffuse>0.85 0.85 0.85 1.0</diffuse>
+          <specular>0.9 0.9 0.9 1.0</specular>
+        </material>
           <velocity>10.0</velocity>
         </limit>
       </axis>
