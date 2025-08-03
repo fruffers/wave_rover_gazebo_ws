@@ -221,7 +221,10 @@
 
       <sensor name="realsense_d435" type="rgbd_camera">
         <update_rate>60</update_rate>
+        <topic>camera/image_raw</topic>
+        <gz_frame_id>camera_sensor_frame</gz_frame_id>
         <camera name="camera">
+          <camera_info_topic>camera/camera_info</camera_info_topic>
           <horizontal_fov>1.0472</horizontal_fov>
           <lens>
             <intrinsics>
@@ -264,6 +267,7 @@
             <stddev>0.007</stddev>
           </noise>
         </camera>
+        <visualize>true</visualize>
       </sensor>
     </link>
 
