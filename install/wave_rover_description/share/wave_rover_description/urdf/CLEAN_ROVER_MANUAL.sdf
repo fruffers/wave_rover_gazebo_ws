@@ -220,9 +220,10 @@
       </visual>
 
       <sensor name="realsense_d435" type="rgbd_camera">
+        <pose>0 0 0 0 0 -1.5708</pose>
         <update_rate>60</update_rate>
         <topic>camera/image_raw</topic>
-        <gz_frame_id>camera_sensor_frame</gz_frame_id>
+        <gz_frame_id>camera_sensor_link</gz_frame_id>
         <camera name="camera">
           <camera_info_topic>camera/camera_info</camera_info_topic>
           <horizontal_fov>1.0472</horizontal_fov>
@@ -268,6 +269,7 @@
           </noise>
         </camera>
         <visualize>true</visualize>
+        <always_on>true</always_on>
       </sensor>
     </link>
 
@@ -275,7 +277,7 @@
     <joint name="camera_sensor_joint" type="fixed">
       <parent>camera_link</parent>
       <child>camera_sensor_link</child>
-      <pose>0 0 0 0 0 -1.5708</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
 
     <!-- Camera Optical Link -->
@@ -298,7 +300,7 @@
     <joint name="camera_optical_joint" type="fixed">
       <parent>camera_sensor_link</parent>
       <child>camera_link_optical</child>
-      <pose>0 0 0 -1.5708 0 -1.5708</pose>
+      <pose>0 0 0 0 0 0</pose>
     </joint>
 
     <!-- Front Left Wheel -->

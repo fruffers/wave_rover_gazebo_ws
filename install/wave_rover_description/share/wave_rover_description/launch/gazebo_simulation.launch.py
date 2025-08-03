@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, TimerAction
 from launch.substitutions import LaunchConfiguration
@@ -57,27 +58,31 @@ def generate_launch_description():
         output='screen',
         additional_env=gazebo_env
     )
-    
-    # Bridge for ROS 2 integration (launch after a delay to ensure Gazebo is ready)
-    bridge = TimerAction(
-        period=5.0,
-        actions=[
-            Node(
-                package='ros_gz_bridge',
-                executable='parameter_bridge',
-                arguments=[
-                    '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
-                    '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
-                    '/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model',
-                    '/clock@rosgraph_msgs/msg/Clock@gz.msgs.Clock'
-                ],
-                output='screen'
-            )
+
+    bridge_params = os.path.join(get_package_share_directory('wave_rover_description'), 'urdf/config', 'gz_bridge.yaml')
+    ros_gz_bridge = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments= [
+            '--ros-args',
+            '-p',
+            f'config_file:={bridge_params}'
         ]
     )
+
+    # image_params = os.path.join(get_package_share_directory('wave_rover_description'), 'urdf/config', 'gz_image_bridge.yaml')
+    # ros_gz_image_bridge = Node(
+    #     package="ros_gz_image",
+    #     executable="image_bridge",
+    #     arguments= [
+    #         '--ros-args',
+    #         '-p',
+    #         f'config_file:={image_params}'
+    #     ]
+    # )
     
     return LaunchDescription([
         use_sim_time_arg,
         gazebo_launch,
-        bridge
+        ros_gz_bridge
     ])
