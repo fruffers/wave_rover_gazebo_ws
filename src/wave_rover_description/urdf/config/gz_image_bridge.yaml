@@ -7,6 +7,6 @@
 
 - ros_topic_name: "camera/depth_image"
   gz_topic_name: "camera/depth_image"
-  ros_type_name: "sensor_msgs/msg/Image"
-  gz_type_name: "gz.msgs.Image"
+  ros_type_name: "sensor_msgs/msg/DepthImage"
+  gz_type_name: "gz.msgs.DepthImage"
   direction: GZ_TO_ROS

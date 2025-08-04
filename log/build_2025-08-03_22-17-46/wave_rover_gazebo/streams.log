@@ -1,0 +1,20 @@
+[0.376s] Invoking command in '/home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --build /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_gazebo -- -j16 -l16
+[0.413s] Invoked command in '/home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --build /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_gazebo -- -j16 -l16
+[0.415s] Invoking command in '/home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --install /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_gazebo
+[0.424s] -- Install configuration: ""
+[0.425s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/ament_index/resource_index/package_run_dependencies/wave_rover_gazebo
+[0.425s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/ament_index/resource_index/parent_prefix_path/wave_rover_gazebo
+[0.425s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/environment/ament_prefix_path.sh
+[0.425s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/environment/ament_prefix_path.dsv
+[0.425s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/environment/path.sh
+[0.425s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/environment/path.dsv
+[0.426s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/local_setup.bash
+[0.426s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/local_setup.sh
+[0.426s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/local_setup.zsh
+[0.426s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/local_setup.dsv
+[0.426s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/package.dsv
+[0.426s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/ament_index/resource_index/packages/wave_rover_gazebo
+[0.426s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/cmake/wave_rover_gazeboConfig.cmake
+[0.426s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/cmake/wave_rover_gazeboConfig-version.cmake
+[0.426s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_gazebo/share/wave_rover_gazebo/package.xml
+[0.432s] Invoked command in '/home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --install /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_gazebo

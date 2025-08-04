@@ -23,38 +23,23 @@ def generate_launch_description():
         description='Use simulation (Gazebo) clock if true'
     )
     
-    # Set environment variables for Gazebo to find the models
+    # Set environment variables for Gazebo Harmonic to find the models
     pkg_share = FindPackageShare(package='wave_rover_description').find('wave_rover_description')
-    
-    # Get current environment variables
-    current_ign_resource_path = os.environ.get('IGN_GAZEBO_RESOURCE_PATH', '')
-    current_ign_model_path = os.environ.get('IGN_GAZEBO_MODEL_PATH', '')
     current_gz_resource_path = os.environ.get('GZ_SIM_RESOURCE_PATH', '')
     current_gz_model_path = os.environ.get('GZ_SIM_MODEL_PATH', '')
-    
-    # Build new paths including our package
     new_resource_paths = [pkg_share]
-    if current_ign_resource_path:
-        new_resource_paths.append(current_ign_resource_path)
     if current_gz_resource_path:
         new_resource_paths.append(current_gz_resource_path)
-    
     new_model_paths = [os.path.join(pkg_share, 'models')]
-    if current_ign_model_path:
-        new_model_paths.append(current_ign_model_path)
     if current_gz_model_path:
         new_model_paths.append(current_gz_model_path)
-    
     gazebo_env = {
-        'IGN_GAZEBO_RESOURCE_PATH': ':'.join(new_resource_paths),
-        'IGN_GAZEBO_MODEL_PATH': ':'.join(new_model_paths),
         'GZ_SIM_RESOURCE_PATH': ':'.join(new_resource_paths),
         'GZ_SIM_MODEL_PATH': ':'.join(new_model_paths)
     }
-    
-    # Launch Ignition Gazebo with the world file
+    # Launch Gazebo Harmonic with the world file
     gazebo_launch = ExecuteProcess(
-        cmd=['ign', 'gazebo', '-r', world_file_path],
+        cmd=['gz', 'sim', '-r', world_file_path],
         output='screen',
         additional_env=gazebo_env
     )
@@ -70,19 +55,20 @@ def generate_launch_description():
         ]
     )
 
-    # image_params = os.path.join(get_package_share_directory('wave_rover_description'), 'urdf/config', 'gz_image_bridge.yaml')
-    # ros_gz_image_bridge = Node(
-    #     package="ros_gz_image",
-    #     executable="image_bridge",
-    #     arguments= [
-    #         '--ros-args',
-    #         '-p',
-    #         f'config_file:={image_params}'
-    #     ]
-    # )
+    image_params = os.path.join(get_package_share_directory('wave_rover_description'), 'urdf/config', 'gz_image_bridge.yaml')
+    ros_gz_image_bridge = Node(
+        package="ros_gz_image",
+        executable="image_bridge",
+        arguments= [
+            '--ros-args',
+            '-p',
+            f'config_file:={image_params}'
+        ]
+    )
     
     return LaunchDescription([
         use_sim_time_arg,
         gazebo_launch,
-        ros_gz_bridge
+        ros_gz_bridge,
+        ros_gz_image_bridge
     ])
