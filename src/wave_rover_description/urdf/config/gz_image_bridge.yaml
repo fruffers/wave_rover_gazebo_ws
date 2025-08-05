@@ -1,12 +1,12 @@
 
 - ros_topic_name: "camera/image_raw"
-  gz_topic_name: "camera/image_raw"
+  gz_topic_name: "/world/simple_rover_world/model/wave_rover/link/camera_sensor_link/sensor/realsense_d435/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
 
 - ros_topic_name: "camera/depth_image"
-  gz_topic_name: "camera/depth_image"
-  ros_type_name: "sensor_msgs/msg/DepthImage"
-  gz_type_name: "gz.msgs.DepthImage"
+  gz_topic_name: "/world/simple_rover_world/model/wave_rover/link/camera_sensor_link/sensor/realsense_d435/depth_image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS

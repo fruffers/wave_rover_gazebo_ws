@@ -55,20 +55,15 @@ def generate_launch_description():
         ]
     )
 
-    image_params = os.path.join(get_package_share_directory('wave_rover_description'), 'urdf/config', 'gz_image_bridge.yaml')
-    ros_gz_image_bridge = Node(
-        package="ros_gz_image",
-        executable="image_bridge",
-        arguments= [
-            '--ros-args',
-            '-p',
-            f'config_file:={image_params}'
-        ]
-    )
+    # image_params = os.path.join(get_package_share_directory('wave_rover_description'), 'urdf/config', 'gz_image_bridge.yaml')
+    # ros_gz_image_bridge = Node(
+    #     package="ros_gz_image",
+    #     executable="image_bridge",
+    #     arguments= ["/camera/image_raw", "/camera/depth_image"]
+    # )
     
     return LaunchDescription([
         use_sim_time_arg,
         gazebo_launch,
-        ros_gz_bridge,
-        ros_gz_image_bridge
+        ros_gz_bridge
     ])
