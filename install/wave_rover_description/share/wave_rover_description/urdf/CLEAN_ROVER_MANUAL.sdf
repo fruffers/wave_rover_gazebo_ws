@@ -219,12 +219,12 @@
         </material>
       </visual>
 
-      <sensor name="realsense_d435" type="rgbd_camera">
+      <sensor name="realsense_d435" type="camera">
         <pose>0 0 0 0 0 -1.5708</pose>
         <update_rate>60</update_rate>
         <gz_frame_id>camera_sensor_link</gz_frame_id>
         <camera name="camera">
-        <topic>camera/image_raw</topic>
+        <optical_frame_id>camera_link_optical</optical_frame_id>
           <camera_info_topic>camera/camera_info</camera_info_topic>
           <horizontal_fov>1.0472</horizontal_fov>
           <lens>
@@ -256,6 +256,11 @@
             <near>0.01</near>
             <far>300</far>
           </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
           <depth_camera>
             <topic>camera/depth_image</topic>
             <clip>
@@ -269,8 +274,9 @@
             <stddev>0.007</stddev>
           </noise>
         </camera>
-        <visualize>true</visualize>
         <always_on>true</always_on>
+        <visualize>true</visualize>
+        <topic>camera/image_raw</topic>
       </sensor>
     </link>
 
@@ -295,6 +301,8 @@
           <izz>1e-8</izz>
         </inertia>
       </inertial>
+
+      
     </link>
 
     <!-- Camera Optical Joint -->

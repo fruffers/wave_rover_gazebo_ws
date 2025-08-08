@@ -1,0 +1,106 @@
+<sensor name="realsense_d435" type="rgbd_camera">
+        <pose>0 0 0 0 0 -1.5708</pose>
+        <update_rate>60</update_rate>
+        <gz_frame_id>camera_sensor_link</gz_frame_id>
+        <camera name="camera">
+        <optical_frame_id>camera_link_optical</optical_frame_id>
+          <camera_info_topic>camera/camera_info</camera_info_topic>
+          <horizontal_fov>1.0472</horizontal_fov>
+          <lens>
+            <intrinsics>
+              <!-- fx = fy = width / ( 2 * tan (hfov / 2 ) ) -->
+              <fx>554.25469</fx>
+              <fy>554.25469</fy>
+              <!-- cx = ( width + 1 ) / 2 -->
+              <cx>320.5</cx>
+              <!-- cy = ( height + 1 ) / 2 -->
+              <cy>240.5</cy>
+              <s>0</s>
+            </intrinsics>
+          </lens>
+          <distortion>
+            <k1>0.0</k1>
+            <k2>0.0</k2>
+            <k3>0.0</k3>
+            <p1>0.0</p1>
+            <p2>0.0</p2>
+            <center>0.5 0.5</center>
+          </distortion>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>300</far>
+          </clip>
+          <depth_camera>
+            <clip>
+              <near>0.1</near>
+              <far>10</far>
+            </clip>
+          </depth_camera>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <topic>camera/image_raw</topic>
+      </sensor>
+    </link>
+
+    <!-- Camera Sensor Joint -->
+    <joint name="camera_sensor_joint" type="fixed">
+      <parent>camera_link</parent>
+      <child>camera_sensor_link</child>
+      <pose>0 0 0 0 0 0</pose>
+    </joint>
+
+    <!-- Camera Optical Link -->
+    <link name="camera_link_optical">
+      <pose relative_to="camera_sensor_link">0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1e-8</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1e-8</iyy>
+          <iyz>0.0</iyz>
+          <izz>1e-8</izz>
+        </inertia>
+      </inertial>
+
+
+
+<sensor name="realsense_d435" type="camera">
+        <pose>0 0 0 0 0 -1.5708</pose>
+        <update_rate>60</update_rate>
+        <gz_frame_id>camera_sensor_link</gz_frame_id>
+        <camera name="camera">
+        <optical_frame_id>camera_link_optical</optical_frame_id>
+          <camera_info_topic>camera/camera_info</camera_info_topic>
+          <horizontal_fov>1.0472</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <topic>camera/image_raw</topic>
+      </sensor>

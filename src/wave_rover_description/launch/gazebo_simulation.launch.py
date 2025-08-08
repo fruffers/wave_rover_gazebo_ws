@@ -37,33 +37,42 @@ def generate_launch_description():
         'GZ_SIM_RESOURCE_PATH': ':'.join(new_resource_paths),
         'GZ_SIM_MODEL_PATH': ':'.join(new_model_paths)
     }
-    # Launch Gazebo Harmonic with the world file
+    # Launch Gazebo Fortress with the world file
     gazebo_launch = ExecuteProcess(
-        cmd=['gz', 'sim', '-r', world_file_path],
+        cmd=['ign', 'gazebo', '-r', world_file_path],
         output='screen',
         additional_env=gazebo_env
     )
 
-    bridge_params = os.path.join(get_package_share_directory('wave_rover_description'), 'urdf/config', 'gz_bridge.yaml')
-    ros_gz_bridge = Node(
-        package="ros_gz_bridge",
+    ros_ign_bridge = Node(
+        package="ros_ign_bridge",
         executable="parameter_bridge",
-        arguments= [
-            '--ros-args',
-            '-p',
-            f'config_file:={bridge_params}'
+        arguments=[
+            "/clock@rosgraph_msgs/msg/Clock@ignition.msgs.Clock",
+            "/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist",
+            "/odom@nav_msgs/msg/Odometry@ignition.msgs.Odometry",
+            "/joint_states@sensor_msgs/msg/JointState@ignition.msgs.Model",
+            "/tf@tf2_msgs/msg/TFMessage@ignition.msgs.Pose_V",
+            "/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo",
+            "/camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked",
+            "/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image"
+        ],
+        output="screen",
+        parameters=[
+            {'use_sim_time': LaunchConfiguration('use_sim_time')},
         ]
     )
 
-    # image_params = os.path.join(get_package_share_directory('wave_rover_description'), 'urdf/config', 'gz_image_bridge.yaml')
-    # ros_gz_image_bridge = Node(
-    #     package="ros_gz_image",
+    # ros_ign_image_bridge = Node(
+    #     package="ros_ign_image",
     #     executable="image_bridge",
-    #     arguments= ["/camera/image_raw", "/camera/depth_image"]
+    #     arguments=[
+    #         "/camera/image_raw"
+    #     ]
     # )
-    
+
     return LaunchDescription([
         use_sim_time_arg,
         gazebo_launch,
-        ros_gz_bridge
+        ros_ign_bridge,
     ])
