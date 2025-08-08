@@ -68,12 +68,13 @@ def generate_launch_description():
     #     package="ros_ign_image",
     #     executable="image_bridge",
     #     arguments=[
-    #         "/camera/image_raw"
+    #         "/camera/image_raw",
+    #         "/camera/depth_image"
     #     ]
     # )
 
     return LaunchDescription([
         use_sim_time_arg,
         gazebo_launch,
-        ros_ign_bridge,
+        ros_ign_bridge
     ])

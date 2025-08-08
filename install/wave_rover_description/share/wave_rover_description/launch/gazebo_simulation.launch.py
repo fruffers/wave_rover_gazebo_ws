@@ -55,8 +55,6 @@ def generate_launch_description():
             "/tf@tf2_msgs/msg/TFMessage@ignition.msgs.Pose_V",
             "/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo",
             "/camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked",
-            "/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image",
-            "/camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image"
         ],
         output="screen",
         parameters=[
@@ -64,16 +62,18 @@ def generate_launch_description():
         ]
     )
 
-    # ros_ign_image_bridge = Node(
-    #     package="ros_ign_image",
-    #     executable="image_bridge",
-    #     arguments=[
-    #         "/camera/image_raw"
-    #     ]
-    # )
+    ros_ign_image_bridge = Node(
+        package="ros_ign_image",
+        executable="image_bridge",
+        arguments=[
+            "/camera/image_raw",
+            "/camera/depth_image"
+        ]
+    )
 
     return LaunchDescription([
         use_sim_time_arg,
         gazebo_launch,
         ros_ign_bridge,
+        ros_ign_image_bridge
     ])
