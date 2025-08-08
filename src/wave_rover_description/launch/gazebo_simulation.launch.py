@@ -55,7 +55,8 @@ def generate_launch_description():
             "/tf@tf2_msgs/msg/TFMessage@ignition.msgs.Pose_V",
             "/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo",
             "/camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked",
-            "/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image"
+            "/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image",
+            "/camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image"
         ],
         output="screen",
         parameters=[
