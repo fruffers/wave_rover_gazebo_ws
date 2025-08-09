@@ -226,15 +226,15 @@
 				<pose>0 0 0 0 0 -1.5708</pose>
 				<topic>camera/image_raw</topic>
 				<camera name="d435">
-					<horizontal_fov>1.21126</horizontal_fov>
+					<horizontal_fov>1.204277</horizontal_fov>  <!-- 69° in radians -->
 					<image>
 						<width>640</width>
 						<height>480</height>
 						<format>RGB_INT8</format>
 					</image>
 					<clip>
-						<near>0.1</near>
-						<far>100</far>
+						<near>0.105</near>  <!-- D435 minimum range is 10.5cm -->
+						<far>10.0</far>    <!-- D435 maximum range is ~10m -->
 					</clip>
 					<noise>
 						<type>gaussian</type>
@@ -251,14 +251,14 @@
 				<topic>camera/depth_image</topic>
 				<pose>0 0 0 0 0 -1.5708</pose>
 				<camera name="d435">
-					<horizontal_fov>1.48702</horizontal_fov>
+					<horizontal_fov>1.518436</horizontal_fov>  <!-- 87° in radians -->
 					<image>
 						<width>1280</width>
 						<height>720</height>
 					</image>
 					<clip>
-						<near>0.1</near>
-						<far>100</far>
+						<near>0.105</near>  <!-- D435 minimum range is 10.5cm -->
+						<far>10.0</far>    <!-- D435 maximum range is ~10m -->
 					</clip>
 					<noise>
 						<type>gaussian</type>
