@@ -1,0 +1,35 @@
+[0.679s] Invoking command in '/home/louise/Development/wave_rover_gazebo_ws/src/test_box_launch': PYTHONPATH=/home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/test_box_launch build --build-base /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/build install --record /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/install.log --single-version-externally-managed install_data
+[0.853s] running egg_info
+[0.853s] creating ../../build/test_box_launch/test_box_launch.egg-info
+[0.854s] writing ../../build/test_box_launch/test_box_launch.egg-info/PKG-INFO
+[0.854s] writing dependency_links to ../../build/test_box_launch/test_box_launch.egg-info/dependency_links.txt
+[0.854s] writing entry points to ../../build/test_box_launch/test_box_launch.egg-info/entry_points.txt
+[0.854s] writing requirements to ../../build/test_box_launch/test_box_launch.egg-info/requires.txt
+[0.854s] writing top-level names to ../../build/test_box_launch/test_box_launch.egg-info/top_level.txt
+[0.854s] writing manifest file '../../build/test_box_launch/test_box_launch.egg-info/SOURCES.txt'
+[0.856s] reading manifest file '../../build/test_box_launch/test_box_launch.egg-info/SOURCES.txt'
+[0.856s] writing manifest file '../../build/test_box_launch/test_box_launch.egg-info/SOURCES.txt'
+[0.856s] running build
+[0.856s] running build_py
+[0.856s] creating /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/build
+[0.857s] creating /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/build/lib
+[0.857s] creating /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/build/lib/test_box_launch
+[0.857s] copying test_box_launch/__init__.py -> /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/build/lib/test_box_launch
+[0.857s] running install
+[0.857s] running install_lib
+[0.857s] creating /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages/test_box_launch
+[0.858s] copying /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/build/lib/test_box_launch/__init__.py -> /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages/test_box_launch
+[0.858s] byte-compiling /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages/test_box_launch/__init__.py to __init__.cpython-310.pyc
+[0.858s] running install_data
+[0.858s] creating /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/share/ament_index
+[0.858s] creating /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/share/ament_index/resource_index
+[0.859s] creating /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/share/ament_index/resource_index/packages
+[0.859s] copying resource/test_box_launch -> /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/share/ament_index/resource_index/packages
+[0.859s] copying package.xml -> /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/share/test_box_launch
+[0.859s] creating /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/share/test_box_launch/launch
+[0.859s] copying launch/display_box.launch.py -> /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/share/test_box_launch/launch
+[0.859s] running install_egg_info
+[0.861s] Copying ../../build/test_box_launch/test_box_launch.egg-info to /home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages/test_box_launch-0.0.0-py3.10.egg-info
+[0.862s] running install_scripts
+[0.876s] writing list of installed files to '/home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/install.log'
+[0.900s] Invoked command in '/home/louise/Development/wave_rover_gazebo_ws/src/test_box_launch' returned '0': PYTHONPATH=/home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/test_box_launch build --build-base /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/build install --record /home/louise/Development/wave_rover_gazebo_ws/build/test_box_launch/install.log --single-version-externally-managed install_data

@@ -1,6 +1,0 @@
-[31mCMake Error at cmake_install.cmake:62 (file):
-  file INSTALL cannot find
-  "/home/louise/Development/wave_rover_gazebo_ws/src/wave_rover_description/models":
-  No such file or directory.
-
-[0m
