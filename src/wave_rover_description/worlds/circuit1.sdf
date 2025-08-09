@@ -1,0 +1,547 @@
+<sdf version='1.10'>
+  <world name='empty'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <plugin filename='gz-sim-sensors-system.so' name='gz::sim::systems::Sensors'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_red/1</uri>
+      <name>cone_red</name>
+      <pose>-6.0088072047595924 -1.5105438809490299 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_red/1</uri>
+      <name>cone_red_0</name>
+      <pose>-7.0008307996721051 -1.4806229996089035 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow</name>
+      <pose>-5.9769370494317702 -0.7251670373586081 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_0</name>
+      <pose>-5.9991248113328588 0.17331786645799796 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue</name>
+      <pose>-6.9965428199079209 -0.721887648076315 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_0</name>
+      <pose>-6.9913237085974611 0.14907310038870181 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_1</name>
+      <pose>-6.9866630514809334 0.99225694394971775 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_1</name>
+      <pose>-5.9950276236027094 0.95910768685478487 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_2</name>
+      <pose>-6.98218843845466 1.7787692577794414 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_2</name>
+      <pose>-5.8776072147777088 1.5758333132094891 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_3</name>
+      <pose>-6.7222283715964153 2.788764033964751 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_3</name>
+      <pose>-5.478836709830313 2.1069347442867858 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_4</name>
+      <pose>-5.8696019226025564 3.0071101779652629 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_4</name>
+      <pose>-4.7728786309555353 2.1022937883748494 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_5</name>
+      <pose>-5.0797260796853232 3.2262025142325799 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_6</name>
+      <pose>-4.5180457015998945 3.2882798416627312 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_5</name>
+      <pose>-4.3277163958401541 2.0543401177957819 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_7</name>
+      <pose>-3.784959689761946 3.1987592760553869 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_6</name>
+      <pose>-3.7354405232554866 1.9669718049527896 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_8</name>
+      <pose>-3.0543353490888538 2.9417651411945727 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_9</name>
+      <pose>-2.4942698997968682 2.7141377545545406 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_7</name>
+      <pose>-3.2865359809894876 1.712407189650601 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_8</name>
+      <pose>-2.6127555074345263 1.5969052410933644 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_10</name>
+      <pose>-1.9067904131583493 2.3469422339172725 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_9</name>
+      <pose>-2.5608474892786384 0.92561670245580863 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_11</name>
+      <pose>-1.4618178236843846 1.7581748785813194 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_12</name>
+      <pose>-1.4670022511000997 0.83723110428876368 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_10</name>
+      <pose>-2.7032630115741316 0.45145772097026216 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_11</name>
+      <pose>-2.9879235305919272 -0.16268743741977332 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_12</name>
+      <pose>-3.1602750442755072 -0.77762010371769907 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_13</name>
+      <pose>-1.6666291782024176 0.19612831876321901 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_14</name>
+      <pose>-1.8949879636736187 -0.52915614922672072 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_15</name>
+      <pose>-2.0954987636001783 -1.2828368898007492 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_13</name>
+      <pose>-3.3045367114265289 -1.4483533756015121 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_16</name>
+      <pose>-2.2114445042318094 -1.9252075499857444 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_17</name>
+      <pose>-2.1317845513883089 -2.6796296872474725 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_14</name>
+      <pose>-3.3370965284091358 -2.1758211459358865 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_15</name>
+      <pose>-3.2562100546799035 -2.846985565946559 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_16</name>
+      <pose>-3.1758621772047464 -3.5187116924641089 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_18</name>
+      <pose>-1.8827452637458331 -3.2952227150361191 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_19</name>
+      <pose>-1.7465450771725441 -3.9932296048568423 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_20</name>
+      <pose>-1.5259534824282368 -4.6619767868383626 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_17</name>
+      <pose>-2.8978517571791924 -4.106759976995896 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_18</name>
+      <pose>-2.7332865785636731 -4.8611117532448525 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_21</name>
+      <pose>-1.2775448245576233 -5.2758418980855168 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_22</name>
+      <pose>-1.19881307165172 -6.1404264973915641 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_23</name>
+      <pose>-1.202885038675344 -6.9214671042957221 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_24</name>
+      <pose>-1.4026540381529742 -7.5646899597506376 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_25</name>
+      <pose>-1.6301307928777602 -8.1805032000414855 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_26</name>
+      <pose>-2.1091934951171742 -8.6299568900372563 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_19</name>
+      <pose>-2.3709882199115899 -5.3630398401172581 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_20</name>
+      <pose>-2.1792077442978446 -6.1168298745971885 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_21</name>
+      <pose>-2.042713055783119 -6.7584248588842808 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_22</name>
+      <pose>-2.2981624611639466 -7.3459397394904347 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_23</name>
+      <pose>-2.6101568450939858 -7.7969240207529449 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_24</name>
+      <pose>-3.0893790211942553 -8.217030744372515 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_27</name>
+      <pose>-2.5609974320940223 -9.1366594923782163 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_28</name>
+      <pose>-3.0689598897269086 -9.5523927956896806 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_29</name>
+      <pose>-3.6042824120137711 -9.6139633756050245 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_30</name>
+      <pose>-4.2244061457513791 -9.7033152622636951 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_25</name>
+      <pose>-3.5125557485134919 -8.4093846726150865 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_26</name>
+      <pose>-3.9367899640539585 -8.6648335529631204 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_27</name>
+      <pose>-4.3598375737151027 -8.5854061450083172 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_31</name>
+      <pose>-4.7614398211592954 -9.7370211353031078 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_32</name>
+      <pose>-5.3537292069599616 -9.657294814442313 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_33</name>
+      <pose>-5.8337118532403753 -9.6039527105974489 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_34</name>
+      <pose>-6.3435847542904789 -9.4696116667199242 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_35</name>
+      <pose>-6.5959021916287224 -8.9372897098426929 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_36</name>
+      <pose>-6.5910576607961113 -8.0951908653533309 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_28</name>
+      <pose>-4.6989365513658896 -8.7275085185847026 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_29</name>
+      <pose>-5.1778774366053355 -8.6812715345097153 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_30</name>
+      <pose>-5.5452336224750152 -8.543712899154583 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_31</name>
+      <pose>-5.5420814247916441 -7.9616069597586065 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_32</name>
+      <pose>-5.537994855995878 -7.238475972943295 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_37</name>
+      <pose>-6.7007324060030093 -7.3578207840903236 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_38</name>
+      <pose>-6.7532918212208735 -6.7116339418550943 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_39</name>
+      <pose>-6.9200314129938167 -6.0659974029702655 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_33</name>
+      <pose>-5.6466095585627274 -6.5371241881516031 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_34</name>
+      <pose>-5.8699988745482887 -5.9208486638248115 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_35</name>
+      <pose>-5.9522119835589811 -5.3888295934475554 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_36</name>
+      <pose>-6.0335539564559246 -4.7433191450093259 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_40</name>
+      <pose>-7.0013750072525855 -5.4198063708487965 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_41</name>
+      <pose>-7.0831779130606503 -4.689634310433803 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_42</name>
+      <pose>-7.1078678870487337 -3.9314157510016665 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_43</name>
+      <pose>-7.1039515492195235 -3.2566949750514471 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_44</name>
+      <pose>-7.0424585291936133 -2.5817220020286067 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_37</name>
+      <pose>-5.9719490482348689 -3.8733245013842454 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_38</name>
+      <pose>-6.052356571295971 -3.1191888035480515 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_39</name>
+      <pose>-6.020512444574635 -2.4175089943214711 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_blue/1</uri>
+      <name>cone_blue_45</name>
+      <pose>-7.0105693160842932 -1.9672170142386562 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///root/.gz/fuel/fuel.gazebosim.org/fruffers/models/cone_yellow/1</uri>
+      <name>cone_yellow_40</name>
+      <pose>-5.9892608891423276 -2.0246073112562306 0 0 0 0</pose>
+    </include>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>

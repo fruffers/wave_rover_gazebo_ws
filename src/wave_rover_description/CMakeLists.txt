@@ -23,8 +23,14 @@ install(DIRECTORY launch/
 install(DIRECTORY urdf/models/
   DESTINATION share/${PROJECT_NAME}/urdf/models)
 
+install(DIRECTORY models/
+  DESTINATION share/${PROJECT_NAME}/models)
+
 install(DIRECTORY worlds/
   DESTINATION share/${PROJECT_NAME}/worlds)
+
+install(DIRECTORY worlds/models/
+  DESTINATION share/${PROJECT_NAME}/worlds/models)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
