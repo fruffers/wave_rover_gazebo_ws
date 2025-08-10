@@ -3,20 +3,17 @@
 import os
 from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, TimerAction
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 
-
-
 def generate_launch_description():
-    # Get path to the package
-    pkg_share = get_package_share_directory('wave_rover_description')
-
-    # Paths to models and world file
-    model_path = os.path.join(pkg_share, 'models')
+    # Get the path to the package
+    pkg_share = FindPackageShare(package='wave_rover_description').find('wave_rover_description')
+    
+    # Path to the world file
     world_file_path = os.path.join(pkg_share, 'worlds', 'circuit1_plugins.sdf')
     
     # Declare launch arguments
@@ -26,19 +23,29 @@ def generate_launch_description():
         description='Use simulation (Gazebo) clock if true'
     )
     
-   # Environment setup
-    # Only use source workspace for model/resource lookup
-    set_gz_resource_path = SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', pkg_share)
-
-    os.environ['GZ_SIM_RESOURCE_PATH'] = pkg_share
-
+    # Set environment variables for Gazebo Harmonic to find the models
+    pkg_share = FindPackageShare(package='wave_rover_description').find('wave_rover_description')
+    current_gz_resource_path = os.environ.get('GZ_SIM_RESOURCE_PATH', '')
+    current_gz_model_path = os.environ.get('GZ_SIM_MODEL_PATH', '')
+    new_resource_paths = [pkg_share]
+    if current_gz_resource_path:
+        new_resource_paths.append(current_gz_resource_path)
+    new_model_paths = [os.path.join(pkg_share, 'models')]
+    if current_gz_model_path:
+        new_model_paths.append(current_gz_model_path)
+    gazebo_env = {
+        'GZ_SIM_RESOURCE_PATH': ':'.join(new_resource_paths),
+        'GZ_SIM_MODEL_PATH': ':'.join(new_model_paths)
+    }
+    # Launch Gazebo Fortress with the world file
     gazebo_launch = ExecuteProcess(
-        cmd=['gz', 'sim', '-r', world_file_path],
-        output='screen'
+        cmd=['ign', 'gazebo', '-r', world_file_path],
+        output='screen',
+        additional_env=gazebo_env
     )
 
-    ros_bridge = Node(
-        package="ros_gz_bridge",
+    ros_ign_bridge = Node(
+        package="ros_ign_bridge",
         executable="parameter_bridge",
         arguments=[
             "/clock@rosgraph_msgs/msg/Clock@ignition.msgs.Clock",
@@ -49,9 +56,7 @@ def generate_launch_description():
             "/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo",
             "/camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked",
             "/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image",
-            "/camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image",
-            "/camera/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU",
-            "/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU"
+            "/camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image"
         ],
         output="screen",
         parameters=[
@@ -70,7 +75,6 @@ def generate_launch_description():
 
     return LaunchDescription([
         use_sim_time_arg,
-        set_gz_resource_path,
         gazebo_launch,
-        ros_bridge
+        ros_ign_bridge
     ])

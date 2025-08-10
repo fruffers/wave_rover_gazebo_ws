@@ -546,7 +546,7 @@
 
         <!-- Include the Wave Rover model -->
     <include>
-      <uri>file://urdf/CLEAN_ROVER_MANUAL.sdf</uri>
+      <uri>./urdf/CLEAN_ROVER_MANUAL.sdf</uri>
       <pose>-6.5 -3.0 0.1 0 0 3.14159</pose>
     </include>
 

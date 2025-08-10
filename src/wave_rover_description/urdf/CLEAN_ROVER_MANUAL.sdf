@@ -54,68 +54,6 @@
         </surface>
       </collision>
 
-      <!-- Chassis IMU Sensor (integrated in rover electronics) -->
-      <sensor name="chassis_imu" type="imu">
-        <always_on>1</always_on>
-        <update_rate>100</update_rate>  <!-- 100Hz for chassis IMU -->
-        <visualize>0</visualize>
-        <topic>imu</topic>
-        <pose>0 0 0.02 0 0 0</pose>  <!-- Mounted in center of chassis -->
-        <imu>
-          <angular_velocity>
-            <x>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.02</stddev>  <!-- Slightly more noise than camera IMU -->
-                <bias_mean>0.0</bias_mean>
-                <bias_stddev>0.01</bias_stddev>
-              </noise>
-            </x>
-            <y>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.02</stddev>
-                <bias_mean>0.0</bias_mean>
-                <bias_stddev>0.01</bias_stddev>
-              </noise>
-            </y>
-            <z>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.02</stddev>
-                <bias_mean>0.0</bias_mean>
-                <bias_stddev>0.01</bias_stddev>
-              </noise>
-            </z>
-          </angular_velocity>
-          <linear_acceleration>
-            <x>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.03</stddev>  <!-- 0.03 m/s² noise for chassis IMU -->
-                <bias_mean>0.0</bias_mean>
-                <bias_stddev>0.15</bias_stddev>
-              </noise>
-            </x>
-            <y>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.03</stddev>
-                <bias_mean>0.0</bias_mean>
-                <bias_stddev>0.15</bias_stddev>
-              </noise>
-            </y>
-            <z>
-              <noise type="gaussian">
-                <mean>0.0</mean>
-                <stddev>0.03</stddev>
-                <bias_mean>0.0</bias_mean>
-                <bias_stddev>0.15</bias_stddev>
-              </noise>
-            </z>
-          </linear_acceleration>
-        </imu>
-      </sensor>
     </link>
 
     <!-- Bracket Stand Link -->
@@ -289,15 +227,15 @@
 				<pose>0 0 0 0 0 -1.5708</pose>
 				<topic>camera/image_raw</topic>
 				<camera name="d435">
-					<horizontal_fov>1.204277</horizontal_fov>  <!-- 69° in radians -->
+					<horizontal_fov>1.21126</horizontal_fov>
 					<image>
 						<width>640</width>
 						<height>480</height>
 						<format>RGB_INT8</format>
 					</image>
 					<clip>
-						<near>0.105</near>  <!-- D435 minimum range is 10.5cm -->
-						<far>10.0</far>    <!-- D435 maximum range is ~10m -->
+						<near>0.1</near>
+						<far>100</far>
 					</clip>
 					<noise>
 						<type>gaussian</type>
@@ -310,95 +248,25 @@
       <sensor name="d435_depth" type="depth_camera">
 				<always_on>1</always_on>
 				<update_rate>90</update_rate>
-				<visualize>1</visualize>  <!-- Enable visualization for better color display -->
+				<visualize>0</visualize>
 				<topic>camera/depth_image</topic>
 				<pose>0 0 0 0 0 -1.5708</pose>
 				<camera name="d435">
-					<horizontal_fov>1.518436</horizontal_fov>  <!-- 87° in radians -->
+					<horizontal_fov>1.48702</horizontal_fov>
 					<image>
 						<width>1280</width>
 						<height>720</height>
-						<format>R_FLOAT32</format>  <!-- Use float32 for more accurate depth values -->
 					</image>
 					<clip>
-						<near>0.01</near>   <!-- Closer minimum for better color range -->
-						<far>5.0</far>     <!-- Shorter maximum for better color contrast -->
+						<near>0.1</near>
+						<far>100</far>
 					</clip>
 					<noise>
 						<type>gaussian</type>
 						<mean>0</mean>
-						<stddev>0.005</stddev>  <!-- Reduced noise -->
+						<stddev>0.1</stddev>
 					</noise>
-					<!-- Depth camera specific settings for more realistic behavior -->
-					<depth_camera>
-						<output>depths</output>
-						<far_clip>5.0</far_clip>
-						<near_clip>0.01</near_clip>
-					</depth_camera>
 				</camera>
-			</sensor>
-
-			<!-- RealSense D435i IMU Sensor -->
-			<sensor name="d435i_imu" type="imu">
-				<always_on>1</always_on>
-				<update_rate>200</update_rate>  <!-- D435i IMU runs at 200Hz -->
-				<visualize>0</visualize>
-				<topic>camera/imu</topic>
-				<pose>0 0 0 0 0 0</pose>  <!-- IMU is integrated into the camera -->
-				<imu>
-					<angular_velocity>
-						<x>
-							<noise type="gaussian">
-								<mean>0.0</mean>
-								<stddev>0.009</stddev>  <!-- 0.009 rad/s noise (realistic for D435i) -->
-								<bias_mean>0.0</bias_mean>
-								<bias_stddev>0.005</bias_stddev>
-							</noise>
-						</x>
-						<y>
-							<noise type="gaussian">
-								<mean>0.0</mean>
-								<stddev>0.009</stddev>
-								<bias_mean>0.0</bias_mean>
-								<bias_stddev>0.005</bias_stddev>
-							</noise>
-						</y>
-						<z>
-							<noise type="gaussian">
-								<mean>0.0</mean>
-								<stddev>0.009</stddev>
-								<bias_mean>0.0</bias_mean>
-								<bias_stddev>0.005</bias_stddev>
-							</noise>
-						</z>
-					</angular_velocity>
-					<linear_acceleration>
-						<x>
-							<noise type="gaussian">
-								<mean>0.0</mean>
-								<stddev>0.017</stddev>  <!-- 0.017 m/s² noise (realistic for D435i) -->
-								<bias_mean>0.0</bias_mean>
-								<bias_stddev>0.1</bias_stddev>
-							</noise>
-						</x>
-						<y>
-							<noise type="gaussian">
-								<mean>0.0</mean>
-								<stddev>0.017</stddev>
-								<bias_mean>0.0</bias_mean>
-								<bias_stddev>0.1</bias_stddev>
-							</noise>
-						</y>
-						<z>
-							<noise type="gaussian">
-								<mean>0.0</mean>
-								<stddev>0.017</stddev>
-								<bias_mean>0.0</bias_mean>
-								<bias_stddev>0.1</bias_stddev>
-							</noise>
-						</z>
-					</linear_acceleration>
-				</imu>
 			</sensor>
 
     </link>
