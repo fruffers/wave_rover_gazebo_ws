@@ -56,7 +56,9 @@ def generate_launch_description():
             "/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo",
             "/camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked",
             "/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image",
-            "/camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image"
+            "/camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image",
+            "/camera/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU",
+            "/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU"
         ],
         output="screen",
         parameters=[
