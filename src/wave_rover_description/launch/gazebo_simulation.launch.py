@@ -4,7 +4,7 @@ import os
 from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, TimerAction
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, Command
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
@@ -44,6 +44,60 @@ def generate_launch_description():
         additional_env=gazebo_env
     )
 
+    # Step 1: Convert SDF to URDF for robot_description
+    robot_sdf_path = os.path.join(pkg_share, 'urdf', 'CLEAN_ROVER_MANUAL.sdf')
+    
+    # Read SDF file and convert mesh URIs for RViz compatibility
+    with open(robot_sdf_path, 'r') as sdf_file:
+        sdf_content = sdf_file.read()
+    
+    # Convert relative mesh URIs to package:// URIs for RViz
+    urdf_content = sdf_content.replace(
+        '<uri>meshes/', '<uri>package://wave_rover_description/meshes/')
+    urdf_content = urdf_content.replace(
+        '<uri>models/intel_realsense_d435/meshes/', '<uri>package://wave_rover_description/models/intel_realsense_d435/meshes/')
+    
+    # Use the converted content as robot_description
+    robot_description = urdf_content
+
+    # Step 2: Robot State Publisher - publishes robot_description parameter and TF transforms
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        parameters=[
+            {'robot_description': robot_description},
+            {'use_sim_time': LaunchConfiguration('use_sim_time')}
+        ],
+        output='screen'
+    )
+
+    # Publish robot_description as a topic for RViz
+    robot_description_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='robot_description_publisher',
+        parameters=[
+            {'robot_description': robot_description},
+            {'use_sim_time': LaunchConfiguration('use_sim_time')},
+            {'publish_frequency': 1.0}  # Publish at 1Hz to create the topic
+        ],
+        remappings=[
+            ('/joint_states', '/joint_states_unused'),  # Don't interfere with main joint_states
+            ('/tf', '/tf_unused')  # Don't interfere with main TF
+        ]
+    )
+
+    # Spawn the robot in Gazebo (still use SDF for simulation)
+    robot_sdf_path = os.path.join(pkg_share, 'urdf', 'CLEAN_ROVER_MANUAL.sdf')
+    spawn_robot = ExecuteProcess(
+        cmd=['ign', 'service', '-s', '/world/default/create',
+             '--reqtype', 'ignition.msgs.EntityFactory',
+             '--reptype', 'ignition.msgs.Boolean',
+             '--timeout', '5000',
+             '--req', f'sdf_filename: "{robot_sdf_path}", name: "wave_rover"'],
+        output='screen'
+    )
+
     ros_ign_bridge = Node(
         package="ros_ign_bridge",
         executable="parameter_bridge",
@@ -78,5 +132,8 @@ def generate_launch_description():
     return LaunchDescription([
         use_sim_time_arg,
         gazebo_launch,
+        TimerAction(period=3.0, actions=[spawn_robot]),  # Wait for Gazebo to start
+        robot_state_publisher,  # Load URDF and publish TF transforms
+        robot_description_publisher,  # Publish robot_description topic
         ros_ign_bridge
     ])

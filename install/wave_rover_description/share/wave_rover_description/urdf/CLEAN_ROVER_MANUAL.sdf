@@ -395,6 +395,42 @@
 				</imu>
 			</sensor>
 
+			<!-- RealSense D435 Point Cloud Sensor (as 3D LIDAR) -->
+			<sensor name="d435_points" type="gpu_lidar">
+        <pose relative_to='camera_link'>0 0 0 0 0 -1.5708</pose>  <!-- Match camera rotation: -90° around Z-axis -->
+				<lidar>
+					<scan>
+						<horizontal>
+							<samples>80</samples>  <!-- Reduced for good performance while maintaining detail -->
+							<resolution>1</resolution>
+							<min_angle>-0.759218</min_angle>  <!-- -43.5° (half of 87° FOV) -->
+							<max_angle>0.759218</max_angle>   <!-- +43.5° (half of 87° FOV) -->
+						</horizontal>
+						<vertical>
+							<samples>60</samples>  <!-- Reduced for good performance while maintaining detail -->
+							<resolution>1</resolution>
+							<min_angle>-0.349066</min_angle>  <!-- -20° (half of ~40° vertical FOV) -->
+							<max_angle>0.349066</max_angle>   <!-- +20° (half of ~40° vertical FOV) -->
+						</vertical>
+					</scan>
+					<range>
+						<min>0.105</min>  <!-- D435 minimum range -->
+						<max>10.0</max>   <!-- D435 maximum range -->
+						<resolution>0.01</resolution>
+					</range>
+					<noise>
+						<type>gaussian</type>
+						<mean>0</mean>
+						<stddev>0.01</stddev>
+					</noise>
+				</lidar>
+        <gz_frame_id>camera_link</gz_frame_id>
+        <always_on>1</always_on>
+				<update_rate>5</update_rate>  <!-- Reduced to 5Hz to prevent RViz queue overflow -->
+				<visualize>1</visualize>
+				<topic>camera/points</topic>
+			</sensor>
+
     </link>
 
     <!-- Camera Sensor Joint -->

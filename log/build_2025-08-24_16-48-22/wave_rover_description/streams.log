@@ -1,0 +1,317 @@
+[0.409s] Invoking command in '/home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --build /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description -- -j16 -l16
+[0.427s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.520s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.592s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.598s] -- Added test 'lint_cmake' to check CMake code style
+[0.601s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.626s] -- Added test 'xmllint' to check XML markup files
+[0.626s] -- Configuring done
+[0.629s] -- Generating done
+[0.630s] -- Build files have been written to: /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description
+[0.651s] Invoked command in '/home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --build /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description -- -j16 -l16
+[0.652s] Invoking command in '/home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --install /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description
+[0.659s] -- Install configuration: ""
+[0.659s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes
+[0.659s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/realsense_bracket.stl
+[0.660s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/roverbody.stl
+[0.736s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/d435.dae
+[0.783s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/back_right_wheel.stl
+[0.789s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/d435.stl
+[0.815s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/realsense_camera.stl
+[0.842s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/front_right_wheel.stl
+[0.847s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/rover_body.stl
+[0.888s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/rightside_wheel.stl
+[0.894s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/front_left_wheel.stl
+[0.900s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/Old
+[0.900s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/Old/older
+[0.900s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/Old/older/rover_body.stl
+[0.942s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/Old/rover_body.stl
+[0.942s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/Old/wave_rover_model.stl
+[1.003s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/wave_rover_model.stl
+[1.062s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/back_left_wheel.stl
+[1.068s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/meshes/leftside_wheel.stl
+[1.073s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf
+[1.073s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes
+[1.073s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/realsense_bracket.stl
+[1.073s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/roverbody.stl
+[1.073s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/d435.dae
+[1.073s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/back_right_wheel.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/d435.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/realsense_camera.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/front_right_wheel.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/rover_body.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/rightside_wheel.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/front_left_wheel.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/Old
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/Old/older
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/Old/older/rover_body.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/Old/rover_body.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/Old/wave_rover_model.stl
+[1.074s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/wave_rover_model.stl
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/back_left_wheel.stl
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/meshes/leftside_wheel.stl
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/CLEAN_ROVER_ABSOLUTE.sdf
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover_fortress.urdf.xacro
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover_fortress.sdf
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover_fortress.gazebo
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover_world.sdf
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover_clean.sdf
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover.urdf.xacro
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/newest_realsense_d435.xacro
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover_simple_world.sdf
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/CLEAN_ROVER_CLASSIC.sdf
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/cut
+[1.075s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover.urdf.xacro
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover.urdf
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/CLEAN_ROVER_MANUAL.sdf
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover.config
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/config
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/config/gz_bridge.yaml
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/config/gz_image_bridge.yaml
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover.sdf
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover.gazebo
+[1.076s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/rover_fortress_corrected.gazebo
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover.urdf
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/CLEAN_ROVER.sdf
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/newest_rover.gazebo
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/newest_rover.urdf.xacro
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/old
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/old/realsense_d435.sdf
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/old/scrap.sdf
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/old/wave_rover.sdf
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/old/robot.sdf
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/out.urdf
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/wave_rover_simple.sdf
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435
+[1.077s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/meshes
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/meshes/realsense.dae
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures/RealSense_Albedo.png
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures/RealSense_Roughness.png
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures/RealSense_Normal.png
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures/RealSense_Metalness.png
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/scripts
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/scripts/model.material
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails/4.png
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails/1.png
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails/3.png
+[1.078s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails/2.png
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/model.config
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/model.sdf
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/meshes
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/meshes/cone.stl
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/thumbnails
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/thumbnails/Screenshot from 2025-07-05 15-09-02.png
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/model.config
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/model.sdf
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/meshes
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/meshes/cone.stl
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/thumbnails
+[1.079s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/thumbnails/Screenshot from 2025-07-05 15-12-53.png
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/model.config
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/model.sdf
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/meshes
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/meshes/cone.stl
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/thumbnails
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/thumbnails/Screenshot from 2025-07-05 15-15-27.png
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/model.config
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/model.sdf
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/meshes
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/meshes/cone.stl
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/thumbnails
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/thumbnails/Screenshot from 2025-07-05 15-17-11.png
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/model.config
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/model.sdf
+[1.080s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/launch
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/launch/gazebo_simulation.launch.py
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/launch/display.launch.py
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/launch/display_box.launch.py
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/meshes
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/meshes/realsense.dae
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures/RealSense_Albedo.png
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures/RealSense_Roughness.png
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures/RealSense_Normal.png
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/textures/RealSense_Metalness.png
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/scripts
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/materials/scripts/model.material
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails/4.png
+[1.081s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails/1.png
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails/3.png
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/thumbnails/2.png
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/model.config
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/intel_realsense_d435/model.sdf
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/meshes
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/meshes/cone.stl
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/thumbnails
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/thumbnails/Screenshot from 2025-07-05 15-09-02.png
+[1.082s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/model.config
+[1.083s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_blue/model.sdf
+[1.083s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow
+[1.083s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/meshes
+[1.083s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/meshes/cone.stl
+[1.083s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/thumbnails
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/thumbnails/Screenshot from 2025-07-05 15-12-53.png
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/model.config
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_yellow/model.sdf
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/meshes
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/meshes/cone.stl
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/thumbnails
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/thumbnails/Screenshot from 2025-07-05 15-15-27.png
+[1.084s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/model.config
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_orange/model.sdf
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/meshes
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/meshes/cone.stl
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/thumbnails
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/thumbnails/Screenshot from 2025-07-05 15-17-11.png
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/model.config
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/urdf/models/cone_red/model.sdf
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/meshes
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/meshes/realsense.dae
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/materials
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/materials/textures
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Albedo.png
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Roughness.png
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Normal.png
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/materials/textures/RealSense_Metalness.png
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/materials/scripts
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/materials/scripts/model.material
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/thumbnails
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/thumbnails/4.png
+[1.085s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/thumbnails/1.png
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/thumbnails/3.png
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/thumbnails/2.png
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/model.config
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/intel_realsense_d435/model.sdf
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/meshes
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/meshes/cone.stl
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/thumbnails
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/thumbnails/Screenshot from 2025-07-05 15-09-02.png
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/model.config
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_blue/model.sdf
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/meshes
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/meshes/cone.stl
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/thumbnails
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/thumbnails/Screenshot from 2025-07-05 15-12-53.png
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/model.config
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_yellow/model.sdf
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/meshes
+[1.086s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/meshes/cone.stl
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/thumbnails
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/thumbnails/Screenshot from 2025-07-05 15-15-27.png
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/model.config
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_orange/model.sdf
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/meshes
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/meshes/cone.stl
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/thumbnails
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/thumbnails/Screenshot from 2025-07-05 15-17-11.png
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/model.config
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/models/cone_red/model.sdf
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/oasis_fortress.sdf
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/circuit1.sdf
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/small_circle.world
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/small_track_bean.world
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/wave_rover_world.sdf
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/start.sdf
+[1.087s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/squidge_fortress.sdf
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/fortress_test.sdf
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/test_world.sdf
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/oasis.world
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/circuit1_plugins.sdf
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/simple_rover_world.sdf
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/meshes
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/meshes/cone.stl
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/thumbnails
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/thumbnails/Screenshot from 2025-07-05 15-09-02.png
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/model.config
+[1.088s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/model.sdf
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/meshes
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/meshes/cone.stl
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/thumbnails
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/thumbnails/Screenshot from 2025-07-05 15-12-53.png
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/model.config
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/model.sdf
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/meshes
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/meshes/cone.stl
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/thumbnails
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/thumbnails/Screenshot from 2025-07-05 15-15-27.png
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/model.config
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/model.sdf
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/meshes
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/meshes/cone.stl
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/thumbnails
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/thumbnails/Screenshot from 2025-07-05 15-17-11.png
+[1.089s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/model.config
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/model.sdf
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/empty.world
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/meshes
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/meshes/cone.stl
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/thumbnails
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/thumbnails/Screenshot from 2025-07-05 15-09-02.png
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/model.config
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_blue/model.sdf
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/meshes
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/meshes/cone.stl
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/thumbnails
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/thumbnails/Screenshot from 2025-07-05 15-12-53.png
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/model.config
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_yellow/model.sdf
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/meshes
+[1.090s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/meshes/cone.stl
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/thumbnails
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/thumbnails/Screenshot from 2025-07-05 15-15-27.png
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/model.config
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_orange/model.sdf
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/meshes
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/meshes/cone.stl
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/thumbnails
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/thumbnails/Screenshot from 2025-07-05 15-17-11.png
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/model.config
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/worlds/models/cone_red/model.sdf
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/ament_index/resource_index/package_run_dependencies/wave_rover_description
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/ament_index/resource_index/parent_prefix_path/wave_rover_description
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/environment/ament_prefix_path.sh
+[1.091s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/environment/ament_prefix_path.dsv
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/environment/path.sh
+[1.091s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/environment/path.dsv
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/local_setup.bash
+[1.091s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/local_setup.sh
+[1.092s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/local_setup.zsh
+[1.092s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/local_setup.dsv
+[1.092s] -- Installing: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/package.dsv
+[1.092s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/ament_index/resource_index/packages/wave_rover_description
+[1.092s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/cmake/wave_rover_descriptionConfig.cmake
+[1.092s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/cmake/wave_rover_descriptionConfig-version.cmake
+[1.092s] -- Up-to-date: /home/louise/Development/wave_rover_gazebo_ws/install/wave_rover_description/share/wave_rover_description/package.xml
+[1.092s] Invoked command in '/home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/louise/Development/wave_rover_gazebo_ws/install/test_box_launch:/home/louise/Development/wave_rover_gazebo_ws/install/launch_sim:/opt/ros/humble /usr/bin/cmake --install /home/louise/Development/wave_rover_gazebo_ws/build/wave_rover_description

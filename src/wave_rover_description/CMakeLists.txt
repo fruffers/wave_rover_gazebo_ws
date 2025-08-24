@@ -12,7 +12,7 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 install(DIRECTORY urdf/meshes/
-  DESTINATION share/${PROJECT_NAME}/urdf/meshes)
+  DESTINATION share/${PROJECT_NAME}/meshes)
 
 install(DIRECTORY urdf/
   DESTINATION share/${PROJECT_NAME}/urdf)

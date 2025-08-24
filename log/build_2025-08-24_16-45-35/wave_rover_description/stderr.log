@@ -1,0 +1,6 @@
+[31mCMake Error at cmake_install.cmake:46 (file):
+  file INSTALL cannot find
+  "/home/louise/Development/wave_rover_gazebo_ws/src/wave_rover_description/meshes":
+  No such file or directory.
+
+[0m

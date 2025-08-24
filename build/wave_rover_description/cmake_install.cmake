@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wave_rover_description/urdf/meshes" TYPE DIRECTORY FILES "/home/louise/Development/wave_rover_gazebo_ws/src/wave_rover_description/urdf/meshes/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wave_rover_description/meshes" TYPE DIRECTORY FILES "/home/louise/Development/wave_rover_gazebo_ws/src/wave_rover_description/urdf/meshes/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
